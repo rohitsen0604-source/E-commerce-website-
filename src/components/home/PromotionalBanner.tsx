@@ -14,10 +14,10 @@ export function PromotionalBanner() {
   if (!promo) return null;
 
   return (
-    <section className="py-16 sm:py-24 bg-[#101010]">
+    <section className="py-12 sm:py-24 bg-[#101010]">
       <Container size="xl">
         <ScrollReveal direction="up" delayMs={100}>
-          <div className="group relative overflow-hidden rounded-2xl border border-[#34312B] bg-[#161514] px-8 py-14 sm:px-16 sm:py-20 text-[#F5F0E8] transition-all duration-500 hover:border-[#C6A76A]/50 hover:shadow-[0_0_40px_rgba(198,167,106,0.12)]">
+          <div className="group relative overflow-hidden rounded-2xl border border-[#34312B] bg-[#161514] px-5 py-10 sm:px-12 sm:py-20 text-[#F5F0E8] transition-all duration-500 hover:border-[#C6A76A]/50 hover:shadow-[0_0_40px_rgba(198,167,106,0.12)]">
             {/* Background image with smooth scale on group hover */}
             <div className="pointer-events-none absolute right-0 top-0 h-full w-full lg:w-1/2 opacity-35 overflow-hidden">
               <Image
@@ -32,26 +32,27 @@ export function PromotionalBanner() {
               <div className="animate-light-sweep absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
             </div>
 
-            <div className="relative z-10 max-w-2xl space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#C6A76A]/40 bg-[#C6A76A]/10 px-4 py-1 text-[11px] font-medium tracking-[0.2em] text-[#C6A76A] uppercase">
+            <div className="relative z-10 max-w-2xl space-y-4 sm:space-y-5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#C6A76A]/40 bg-[#C6A76A]/10 px-3.5 py-1 text-[10px] sm:text-[11px] font-medium tracking-[0.2em] text-[#C6A76A] uppercase">
                 <Tag className="h-3 w-3 text-[#C6A76A] animate-pulse" />
                 <span>{promo.tagline || 'LIMITED PRODUCTION CURATION'}</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F5F0E8] leading-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F5F0E8] leading-tight">
                 {promo.title}
               </h2>
 
-              <p className="font-sans text-sm sm:text-base text-[#D8D2C7] leading-relaxed font-light max-w-xl">
+              <p className="font-sans text-xs sm:text-base text-[#D8D2C7] leading-relaxed font-light max-w-xl">
                 {promo.subtitle}
               </p>
 
-              <div className="pt-3">
+              <div className="pt-2 sm:pt-3">
                 <Button
                   href={promo.linkUrl}
                   variant="accent"
                   size="md"
                   rightIcon={<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
+                  className="w-full sm:w-auto min-h-[44px]"
                 >
                   {promo.buttonText || 'Discover Now'}
                 </Button>

@@ -27,7 +27,7 @@ export function SectionHeading({
   const isLight = theme === 'light';
 
   return (
-    <div className={cn('flex flex-col space-y-3 mb-10 md:mb-14', alignmentClasses[alignment], className)}>
+    <div className={cn('flex flex-col space-y-2.5 sm:space-y-3 mb-8 sm:mb-10 md:mb-14', alignmentClasses[alignment], className)}>
       {badge && (
         <span className="editorial-tag text-[#C6A76A]">
           {badge}
@@ -35,7 +35,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          'font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-wide leading-tight',
+          'font-serif text-2xl sm:text-4xl md:text-5xl font-normal tracking-wide leading-tight',
           isLight ? 'text-[#121110]' : 'text-[#F5F0E8]'
         )}
       >

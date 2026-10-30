@@ -81,10 +81,10 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-[#34312B] bg-[#161514] p-8 sm:p-10 text-[#F5F0E8] space-y-6"
+      className="rounded-2xl border border-[#34312B] bg-[#161514] p-5 sm:p-10 text-[#F5F0E8] space-y-6"
     >
       <div>
-        <h3 className="font-serif text-2xl font-semibold tracking-wide text-[#F5F0E8]">
+        <h3 className="font-serif text-xl sm:text-2xl font-light tracking-wide text-[#F5F0E8]">
           Send Us a Message
         </h3>
         <p className="mt-1 text-xs text-[#A69F93]">
@@ -155,7 +155,7 @@ export function ContactForm() {
         size="md"
         isLoading={isSubmitting}
         rightIcon={<Send className="h-4 w-4" />}
-        className="w-full sm:w-auto"
+        className="w-full sm:w-auto min-h-[44px]"
       >
         Send Message
       </Button>

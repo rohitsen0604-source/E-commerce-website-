@@ -14,7 +14,7 @@ export function RelatedProducts({ products, currentProductId }: RelatedProductsP
   if (filtered.length === 0) return null;
 
   return (
-    <section className="pt-16 border-t border-[#34312B]">
+    <section className="pt-10 sm:pt-16 border-t border-[#34312B]">
       <SectionHeading
         badge="Related Artifacts"
         title="Complementary Pieces"

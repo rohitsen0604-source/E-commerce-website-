@@ -50,7 +50,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       />
 
       {/* Drawer */}
-      <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-[#101010] border-l border-[#34312B] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto animate-fade-in-down">
+      <div className="fixed inset-y-0 right-0 z-50 w-[88vw] max-w-xs bg-[#101010] border-l border-[#34312B] p-5 sm:p-6 shadow-2xl flex flex-col justify-between overflow-y-auto animate-fade-in">
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-5 border-b border-[#24221E]">
@@ -58,7 +58,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 rounded-md border border-[#34312B] text-[#8C8275] hover:text-[#F5F0E8] hover:border-[#C6A76A]"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border border-[#34312B] text-[#A69D8F] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -66,7 +66,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           </div>
 
           {/* Primary Nav Links */}
-          <div className="py-6 space-y-1">
+          <div className="py-5 space-y-1">
             {navigationConfig.mainNav.map((item) => {
               const isActive =
                 item.href === '/'
@@ -78,14 +78,14 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'flex items-center justify-between py-3 text-xs tracking-[0.2em] uppercase font-medium transition-colors',
+                    'flex items-center justify-between min-h-[44px] py-2.5 px-2 rounded-lg text-xs tracking-[0.2em] uppercase font-medium transition-colors',
                     isActive
-                      ? 'text-[#C6A76A] border-b border-[#34312B]'
-                      : 'text-[#A69D8F] hover:text-[#F5F0E8]'
+                      ? 'text-[#C6A76A] bg-[#161514] border border-[#34312B]/60'
+                      : 'text-[#A69D8F] hover:text-[#F5F0E8] hover:bg-[#141312]'
                   )}
                 >
                   <span>{item.title}</span>
-                  <ChevronRight className="h-3.5 w-3.5 opacity-40 text-[#C6A76A]" />
+                  <ChevronRight className="h-4 w-4 opacity-40 text-[#C6A76A]" />
                 </Link>
               );
             })}
@@ -93,19 +93,19 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
 
           {/* Categories */}
           <div className="pt-4 border-t border-[#24221E]">
-            <p className="editorial-tag text-[#8C8275] mb-3">
+            <p className="editorial-tag text-[#8C8275] mb-2 px-2">
               Collections
             </p>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               {navigationConfig.categoryNav.map((cat) => (
                 <Link
                   key={cat.href}
                   href={cat.href}
-                  className="flex items-center justify-between py-2 text-xs font-light text-[#D8D0C3] hover:text-[#C6A76A] transition-colors"
+                  className="flex items-center justify-between min-h-[40px] py-2 px-2 rounded-lg text-xs font-light text-[#D8D0C3] hover:text-[#C6A76A] hover:bg-[#141312] transition-colors"
                 >
                   <span>{cat.title}</span>
                   {cat.badge && (
-                    <span className="text-[9px] tracking-widest uppercase text-[#C6A76A]">
+                    <span className="text-[9px] tracking-widest uppercase text-[#C6A76A] bg-[#C6A76A]/10 border border-[#C6A76A]/30 px-2 py-0.5 rounded-full">
                       {cat.badge}
                     </span>
                   )}
@@ -116,22 +116,22 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         </div>
 
         {/* Footer info & quick contact */}
-        <div className="pt-6 border-t border-[#24221E] space-y-4">
-          <div className="flex flex-col gap-2">
+        <div className="pt-5 border-t border-[#24221E] space-y-4">
+          <div className="flex flex-col gap-2.5">
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 border border-[#C6A76A] bg-[#141312] px-4 py-3 text-[10px] tracking-[0.2em] uppercase font-medium text-[#E8DDC8] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
+              className="flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#C6A76A] bg-[#141312] px-4 py-3 text-[10px] tracking-[0.2em] uppercase font-semibold text-[#E8DDC8] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
             >
-              <MessageCircle className="h-3.5 w-3.5 text-[#C6A76A]" />
+              <MessageCircle className="h-4 w-4 text-[#C6A76A]" />
               <span>WhatsApp Support</span>
             </a>
             <a
               href={`tel:${contactConfig.whatsappNumber}`}
-              className="flex items-center justify-center gap-2 border border-[#34312B] bg-transparent px-4 py-2.5 text-[10px] tracking-[0.18em] uppercase font-light text-[#A69D8F] hover:text-[#F5F0E8] transition-colors"
+              className="flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#34312B] bg-transparent px-4 py-2.5 text-[10px] tracking-[0.18em] uppercase font-light text-[#A69D8F] hover:text-[#F5F0E8] transition-colors"
             >
-              <Phone className="h-3.5 w-3.5 text-[#C6A76A]" />
+              <Phone className="h-4 w-4 text-[#C6A76A]" />
               <span>{contactConfig.phone}</span>
             </a>
           </div>

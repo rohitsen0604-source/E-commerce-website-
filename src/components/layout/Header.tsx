@@ -61,17 +61,18 @@ export function Header() {
       {/* Main Luxury Navigation Bar */}
       <div className="bg-[#101010]/95 backdrop-blur-md border-b border-[#34312B]">
         <Container size="xl">
-          <div className="flex h-18 sm:h-22 items-center justify-between gap-4">
+          <div className="flex h-16 sm:h-20 md:h-22 items-center justify-between gap-3 sm:gap-4">
             {/* Logo */}
-            <div className="flex items-center gap-6 shrink-0">
-              <Logo size="md" href="/" />
+            <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+              <Logo size="sm" href="/" className="flex sm:hidden" />
+              <Logo size="md" href="/" className="hidden sm:flex" />
             </div>
 
             {/* Desktop Navigation Links */}
             <Navigation />
 
             {/* Right section: Search & Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Search input */}
               <div className="hidden sm:block w-48 md:w-56 lg:w-64">
                 <ProductSearch variant="header" />
@@ -89,20 +90,20 @@ export function Header() {
                 <span>WhatsApp Support</span>
               </a>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button - 44x44px touch area */}
               <button
                 type="button"
                 onClick={() => setMobileNavOpen(true)}
-                className="inline-flex md:hidden items-center justify-center p-2 text-[#A69D8F] hover:text-[#F5F0E8]"
+                className="inline-flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#34312B] bg-[#141312] text-[#D8D2C7] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors"
                 aria-label="Open mobile menu"
               >
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               </button>
             </div>
           </div>
 
           {/* Mobile search bar */}
-          <div className="sm:hidden pb-4">
+          <div className="sm:hidden pb-3 pt-1">
             <ProductSearch variant="header" />
           </div>
         </Container>

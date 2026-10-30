@@ -59,24 +59,24 @@ export default function CategoriesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
 
-                  <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
+                  <div className="flex flex-1 flex-col justify-between p-4 sm:p-8">
                     <div>
                       <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#C6A76A] flex items-center gap-1.5">
                         <Sparkles className="h-3 w-3 text-[#C6A76A] animate-twinkle" />
                         Collection Showcase
                       </span>
-                      <h3 className="mt-1 font-serif text-2xl font-light text-[#F5F0E8] group-hover:text-[#E8DDC8] transition-colors">
+                      <h3 className="mt-1 font-serif text-xl sm:text-2xl font-light text-[#F5F0E8] group-hover:text-[#E8DDC8] transition-colors">
                         {category.name}
                       </h3>
-                      <p className="mt-3 text-xs sm:text-sm text-[#D8D2C7] font-light line-clamp-3 leading-relaxed">
+                      <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-[#D8D2C7] font-light line-clamp-3 leading-relaxed">
                         {category.description}
                       </p>
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-[#2B2823] group-hover:border-[#3D3830] transition-colors flex items-center justify-between text-xs font-medium text-[#A69F93]">
+                    <div className="mt-4 sm:mt-6 pt-3.5 sm:pt-4 border-t border-[#2B2823] group-hover:border-[#3D3830] transition-colors flex items-center justify-between text-xs font-medium text-[#A69F93]">
                       <span>{category.productCount || 0} Artifacts</span>
-                      <span className="flex items-center gap-1.5 text-[#F5F0E8] group-hover:text-[#C6A76A] transition-colors">
-                        View Collection <ArrowRight className="h-3.5 w-3.5 text-[#C6A76A] transition-transform duration-300 group-hover:translate-x-1.5" />
+                      <span className="flex items-center gap-1 text-[#F5F0E8] group-hover:text-[#C6A76A] transition-colors">
+                        View <span className="hidden xs:inline">Collection</span> <ArrowRight className="h-3.5 w-3.5 text-[#C6A76A] transition-transform duration-300 group-hover:translate-x-1.5" />
                       </span>
                     </div>
                   </div>

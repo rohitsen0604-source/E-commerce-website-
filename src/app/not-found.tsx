@@ -28,20 +28,21 @@ export default function NotFound() {
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl font-light text-[#F5F0E8] tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-[#F5F0E8] tracking-tight">
             Artifact Not Located
           </h1>
-          <p className="font-sans text-sm text-[#A69F93] max-w-md mx-auto leading-relaxed font-light">
+          <p className="font-sans text-xs sm:text-sm text-[#A69F93] max-w-md mx-auto leading-relaxed font-light">
             The masterpiece, collection, or archive entry you are seeking may have retired to private collections or was relocated.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 w-full max-w-md mx-auto">
           <Button
             href="/"
             variant="accent"
             size="md"
             leftIcon={<ArrowLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />}
+            className="w-full sm:w-auto min-h-[44px]"
           >
             Return to Atelier
           </Button>
@@ -49,8 +50,9 @@ export default function NotFound() {
             href="/products"
             variant="outline"
             size="md"
+            className="w-full sm:w-auto min-h-[44px]"
           >
-            Browse All Masterpieces
+            Browse Masterpieces
           </Button>
         </div>
       </Container>

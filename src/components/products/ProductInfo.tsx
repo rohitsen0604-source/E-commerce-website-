@@ -65,7 +65,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
             <Badge variant="warning">Pre-Order</Badge>
           )}
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F5F0E8] leading-tight">
+        <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F5F0E8] leading-tight">
           {product.name}
         </h1>
       </div>
@@ -88,19 +88,19 @@ export function ProductInfo({ product }: ProductInfoProps) {
           {product.rating.toFixed(1)}
         </span>
         <span className="text-xs text-[#A69F93]">
-          ({product.reviewCount} connoisseur reviews)
+          ({product.reviewCount} reviews)
         </span>
       </div>
 
       {/* Price */}
-      <div className="flex items-baseline gap-4">
-        <span className="font-serif text-3xl sm:text-4xl font-light text-[#C6A76A]">
+      <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap">
+        <span className="font-serif text-2xl sm:text-4xl font-light text-[#C6A76A]">
           {formatCurrency(
             product.price + (selectedVariant?.priceModifier || 0)
           )}
         </span>
         {product.originalPrice && product.originalPrice > product.price && (
-          <span className="font-serif text-lg text-[#827C72] line-through">
+          <span className="font-serif text-base sm:text-lg text-[#827C72] line-through">
             {formatCurrency(product.originalPrice)}
           </span>
         )}
@@ -134,7 +134,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
                   type="button"
                   onClick={() => setSelectedVariant(v)}
                   disabled={!v.inStock}
-                  className={`rounded-lg border px-4 py-2 text-xs font-medium transition-all duration-200 ${
+                  className={`rounded-lg border px-3.5 py-2.5 min-h-[44px] text-xs font-medium transition-all duration-200 ${
                     isSelected
                       ? 'border-[#C6A76A] bg-[#C6A76A] text-[#101010]'
                       : v.inStock
@@ -159,7 +159,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           size="lg"
           fullWidth
           label="Order on WhatsApp"
-          className="shadow-[0_0_20px_rgba(198,167,106,0.25)] hover:shadow-[0_0_35px_rgba(198,167,106,0.5)] hover:scale-[1.01] transition-all"
+          className="shadow-[0_0_20px_rgba(198,167,106,0.25)] hover:shadow-[0_0_35px_rgba(198,167,106,0.5)] hover:scale-[1.01] transition-all min-h-[48px]"
         />
         <p className="text-center font-sans text-xs text-[#A69F93]">
           Chat directly with us on WhatsApp to place your order with free delivery across India.
@@ -167,7 +167,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
       </div>
 
       {/* Key Highlights list */}
-      <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-6">
+      <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-5 sm:p-6">
         <h4 className="text-xs font-semibold uppercase tracking-wider text-[#F5F0E8] mb-3.5">
           Key Highlights
         </h4>
@@ -182,34 +182,55 @@ export function ProductInfo({ product }: ProductInfoProps) {
       </div>
 
       {/* Trust & Guarantee Badges */}
-      <div className="grid grid-cols-2 gap-3 pt-2 text-xs text-[#A69F93]">
-        <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-2 text-xs text-[#A69F93]">
+        <div className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5">
           <ShieldCheck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">100% Genuine</p>
             <p className="text-[10px] text-[#A69F93]">Certified Authentic</p>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
+        <div className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5">
           <Truck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">Fast Delivery</p>
             <p className="text-[10px] text-[#A69F93]">Express Across India</p>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
+        <div className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5">
           <RotateCcw className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">14-Day Returns</p>
             <p className="text-[10px] text-[#A69F93]">Easy Return Policy</p>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
+        <div className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5">
           <Clock className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">2-Year Warranty</p>
             <p className="text-[10px] text-[#A69F93]">Full Brand Coverage</p>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Sticky Bottom Floating Action Bar */}
+      <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden border-t border-[#34312B] bg-[#141312]/95 px-4 py-3 backdrop-blur-md shadow-[0_-10px_30px_rgba(0,0,0,0.7)] flex items-center justify-between gap-3">
+        <div className="flex flex-col min-w-0">
+          <span className="font-serif text-lg font-semibold text-[#C6A76A] leading-tight">
+            {formatCurrency(product.price + (selectedVariant?.priceModifier || 0))}
+          </span>
+          <span className="text-[10px] text-[#A69F93] truncate max-w-[140px]">
+            {product.name}
+          </span>
+        </div>
+        <div className="shrink-0">
+          <WhatsAppButton
+            productName={`${product.name} ${selectedVariant ? `(${selectedVariant.name})` : ''}`}
+            productSlug={product.slug}
+            size="sm"
+            label="Order via WhatsApp"
+            className="min-h-[44px] px-4 font-semibold text-[11px]"
+          />
         </div>
       </div>
     </div>

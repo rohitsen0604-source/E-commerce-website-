@@ -56,7 +56,7 @@ export function SocialLinks({ className, iconClassName }: SocialLinksProps) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="flex h-9 w-9 items-center justify-center border border-[#34312B] bg-[#161514] text-[#A69D8F] transition-colors hover:border-[#C6A76A] hover:bg-[#1C1B19] hover:text-[#C6A76A]"
+          className="flex h-10 w-10 sm:h-9 sm:w-9 min-h-[40px] min-w-[40px] items-center justify-center rounded-lg border border-[#34312B] bg-[#161514] text-[#A69D8F] transition-colors hover:border-[#C6A76A] hover:bg-[#1C1B19] hover:text-[#C6A76A]"
         >
           {getIcon(social.platform)}
         </a>

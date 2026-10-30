@@ -61,14 +61,14 @@ export function ProductCatalogClient({
   return (
     <div className="space-y-8">
       {/* Controls Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-[#34312B] bg-[#161514] p-4 sm:px-6">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 rounded-2xl border border-[#34312B] bg-[#161514] p-3.5 sm:p-4 md:px-6">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
           {/* Mobile Filter Toggle Button */}
           <Button
             onClick={() => setMobileFilterOpen(true)}
             variant="outline"
             size="sm"
-            className="lg:hidden"
+            className="lg:hidden min-h-[40px] px-3.5 text-xs"
             leftIcon={<SlidersHorizontal className="h-4 w-4" />}
           >
             Filters {activeFilterCount > 0 ? `(${activeFilterCount})` : ''}
@@ -76,7 +76,7 @@ export function ProductCatalogClient({
 
           <span className="font-sans text-xs text-[#A69F93]">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#C6A76A] animate-ping mr-1.5 align-middle" />
-            Curated archive: <strong className="text-[#F5F0E8] font-medium">{totalCount}</strong> masterpieces
+            Curated: <strong className="text-[#F5F0E8] font-medium">{totalCount}</strong> pieces
           </span>
 
           {filters.searchQuery && (
@@ -85,7 +85,8 @@ export function ProductCatalogClient({
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="hover:text-[#F5F0E8] transition-colors"
+                className="hover:text-[#F5F0E8] transition-colors p-0.5"
+                aria-label="Clear filter search"
               >
                 <X className="h-3 w-3" />
               </button>

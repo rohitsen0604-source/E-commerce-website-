@@ -13,7 +13,7 @@ export function FeaturedCategories() {
   const categories = getFeaturedCategories();
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F5F1E9] text-[#121110] border-b border-[#E3DDD3]">
+    <section className="py-12 sm:py-20 lg:py-28 bg-[#F5F1E9] text-[#121110] border-b border-[#E3DDD3]">
       <Container size="xl">
         <ScrollReveal direction="up" delayMs={0}>
           <SectionHeading
@@ -24,7 +24,7 @@ export function FeaturedCategories() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {categories.map((category, index) => (
             <ScrollReveal
               key={category.id}
@@ -48,9 +48,9 @@ export function FeaturedCategories() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
                   <div className="flex items-baseline justify-between mb-2">
-                    <h3 className="font-serif text-xl font-normal text-[#121110] group-hover:text-[#8C6F38] transition-colors">
+                    <h3 className="font-serif text-lg sm:text-xl font-normal text-[#121110] group-hover:text-[#8C6F38] transition-colors">
                       {category.name}
                     </h3>
                     <span className="editorial-tag text-[#8C8275] text-[9px] group-hover:text-[#C6A76A] transition-colors">
@@ -60,7 +60,7 @@ export function FeaturedCategories() {
                   <p className="text-xs text-[#6E6659] line-clamp-2 leading-relaxed font-light font-sans">
                     {category.description}
                   </p>
-                  <div className="mt-5 pt-4 border-t border-[#EAE5DC] flex items-center justify-between text-[10px] tracking-widest uppercase font-medium text-[#121110] group-hover:text-[#C6A76A] transition-colors">
+                  <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-[#EAE5DC] flex items-center justify-between text-[10px] tracking-widest uppercase font-medium text-[#121110] group-hover:text-[#C6A76A] transition-colors">
                     <span>Explore Collection</span>
                     <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </div>

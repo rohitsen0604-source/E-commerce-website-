@@ -48,7 +48,7 @@ export function Modal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300 animate-fade-in"
@@ -61,14 +61,14 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         className={cn(
-          'relative z-10 w-full overflow-hidden rounded-2xl border border-[#34312B] bg-[#161514] p-6 sm:p-8 shadow-2xl transition-all duration-300 animate-scale-up text-[#F5F0E8]',
+          'relative z-10 w-full overflow-hidden rounded-2xl border border-[#34312B] bg-[#161514] p-4 sm:p-8 shadow-2xl transition-all duration-300 animate-scale-up text-[#F5F0E8]',
           maxWidthClasses[maxWidth]
         )}
       >
-        <div className="flex items-center justify-between pb-5 border-b border-[#34312B]">
+        <div className="flex items-center justify-between pb-4 sm:pb-5 border-b border-[#34312B]">
           <div>
             {title && (
-              <h3 className="font-serif text-xl sm:text-2xl font-light tracking-wide text-[#F5F0E8]">
+              <h3 className="font-serif text-lg sm:text-2xl font-light tracking-wide text-[#F5F0E8]">
                 {title}
               </h3>
             )}
@@ -81,14 +81,14 @@ export function Modal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full border border-[#34312B] p-2 text-[#A69F93] hover:border-[#C6A76A] hover:bg-[#101010] hover:text-[#C6A76A] transition-colors"
+            className="flex h-11 w-11 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#34312B] text-[#A69F93] hover:border-[#C6A76A] hover:bg-[#101010] hover:text-[#C6A76A] transition-colors shrink-0"
             aria-label="Close dialog"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="pt-6">{children}</div>
+        <div className="pt-4 sm:pt-6">{children}</div>
       </div>
     </div>
   );

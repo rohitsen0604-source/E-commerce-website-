@@ -40,7 +40,7 @@ export function ProductFilters({
   ];
 
   return (
-    <div className={cn('space-y-8 rounded-2xl border border-[#34312B] bg-[#1C1B19] p-6 text-[#F5F0E8]', className)}>
+    <div className={cn('space-y-6 sm:space-y-8 rounded-2xl border border-[#34312B] bg-[#1C1B19] p-4 sm:p-6 text-[#F5F0E8]', className)}>
       <div className="flex items-center justify-between pb-4 border-b border-[#34312B]">
         <div className="flex items-center gap-2">
           <Filter className="h-4 w-4 text-[#C6A76A]" />
@@ -68,7 +68,7 @@ export function ProductFilters({
             type="button"
             onClick={() => onCategoryChange(undefined)}
             className={cn(
-              'flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+              'flex w-full items-center justify-between rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
               !filters.categoryId
                 ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                 : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'
@@ -84,7 +84,7 @@ export function ProductFilters({
                 type="button"
                 onClick={() => onCategoryChange(isActive ? undefined : cat.id)}
                 className={cn(
-                  'flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+                  'flex w-full items-center justify-between rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
                   isActive
                     ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                     : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'
@@ -117,7 +117,7 @@ export function ProductFilters({
                 type="button"
                 onClick={() => onPriceChange(range.min, range.max)}
                 className={cn(
-                  'flex w-full items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+                  'flex w-full items-center rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
                   isSelected
                     ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                     : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'
@@ -140,7 +140,7 @@ export function ProductFilters({
             type="button"
             onClick={() => onBrandChange(undefined)}
             className={cn(
-              'flex w-full items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+              'flex w-full items-center rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
               !filters.brandId
                 ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                 : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'
@@ -156,7 +156,7 @@ export function ProductFilters({
                 type="button"
                 onClick={() => onBrandChange(isActive ? undefined : b.id)}
                 className={cn(
-                  'flex w-full items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+                  'flex w-full items-center rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
                   isActive
                     ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                     : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'
@@ -188,7 +188,7 @@ export function ProductFilters({
                   )
                 }
                 className={cn(
-                  'flex w-full items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors text-left',
+                  'flex w-full items-center rounded-lg px-3 py-2 min-h-[40px] text-xs font-medium transition-colors text-left',
                   isActive
                     ? 'bg-[#C6A76A] text-[#101010] font-semibold'
                     : 'text-[#D8D2C7] hover:bg-[#161514] hover:text-[#F5F0E8]'

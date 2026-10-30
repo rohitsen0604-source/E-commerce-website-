@@ -35,7 +35,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
                   {item.label}
                 </Link>
               ) : (
-                <span className="font-sans text-[11px] uppercase tracking-wider font-medium text-[#F5F0E8] truncate max-w-[200px] sm:max-w-xs">
+                <span className="font-sans text-[11px] uppercase tracking-wider font-medium text-[#F5F0E8] truncate max-w-[120px] xs:max-w-[160px] sm:max-w-xs">
                   {item.label}
                 </span>
               )}

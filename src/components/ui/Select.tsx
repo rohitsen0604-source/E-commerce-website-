@@ -29,7 +29,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={selectId}
             ref={ref}
             className={cn(
-              'w-full appearance-none rounded-lg border border-[#34312B] bg-[#161514] px-3.5 py-2.5 pr-10 text-xs font-medium text-[#F5F0E8] transition-colors duration-200',
+              'w-full min-h-[44px] appearance-none rounded-lg border border-[#34312B] bg-[#161514] px-3.5 py-2.5 pr-10 text-xs font-medium text-[#F5F0E8] transition-colors duration-200',
               'focus:border-[#C6A76A] focus:outline-hidden focus:ring-1 focus:ring-[#C6A76A]',
               'disabled:cursor-not-allowed disabled:bg-[#121110] disabled:text-[#827C72]',
               error && 'border-rose-400 focus:border-rose-400 focus:ring-rose-400',

@@ -60,21 +60,22 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         </div>
 
         {/* Hover Zoom Hint & Fullscreen Trigger */}
-        <div className="absolute right-4 top-4 flex items-center gap-2">
+        <div className="absolute right-3 top-3 sm:right-4 sm:top-4 flex items-center gap-2 z-20">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               setIsZoomModalOpen(true);
             }}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#34312B] bg-[#101010]/90 text-[#F5F0E8] shadow-md backdrop-blur-xs transition-colors hover:border-[#C6A76A] hover:text-[#C6A76A]"
+            className="flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-[#34312B] bg-[#101010]/90 text-[#F5F0E8] shadow-md backdrop-blur-xs transition-colors hover:border-[#C6A76A] hover:text-[#C6A76A]"
             aria-label="Enlarge image"
           >
             <Maximize2 className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-[#34312B] bg-[#101010]/85 px-3.5 py-1 text-[11px] font-sans tracking-wider uppercase text-[#C6A76A] backdrop-blur-xs">
+        {/* Desktop only inspection indicator */}
+        <div className="hidden sm:flex pointer-events-none absolute bottom-4 left-4 items-center gap-2 rounded-full border border-[#34312B] bg-[#101010]/85 px-3.5 py-1 text-[11px] font-sans tracking-wider uppercase text-[#C6A76A] backdrop-blur-xs">
           <ZoomIn className="h-3 w-3" />
           <span>Hover to inspect details</span>
         </div>
@@ -82,14 +83,14 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
       {/* Thumbnails list */}
       {images.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto pb-2">
+        <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 -webkit-overflow-scrolling-touch">
           {images.map((img, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => setSelectedImageIndex(idx)}
               className={cn(
-                'relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border transition-all duration-200 bg-[#161514]',
+                'relative h-16 w-16 sm:h-20 sm:w-20 shrink-0 overflow-hidden rounded-xl border transition-all duration-200 bg-[#161514]',
                 selectedImageIndex === idx
                   ? 'border-[#C6A76A] ring-1 ring-[#C6A76A]/40'
                   : 'border-[#34312B] opacity-60 hover:opacity-100 hover:border-[#C6A76A]/50'
@@ -99,7 +100,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 src={img}
                 alt={`${productName} thumbnail ${idx + 1}`}
                 fill
-                sizes="80px"
+                sizes="(max-width: 640px) 64px, 80px"
                 className="object-cover"
               />
             </button>

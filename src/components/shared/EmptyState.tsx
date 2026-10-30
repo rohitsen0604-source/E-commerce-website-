@@ -25,22 +25,23 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        'flex flex-col items-center justify-center rounded-2xl border border-dashed border-zinc-200 bg-white p-12 text-center dark:border-zinc-800 dark:bg-zinc-900/50',
+        'flex flex-col items-center justify-center rounded-2xl border border-dashed border-[#34312B] bg-[#161514] p-6 sm:p-12 text-center text-[#F5F0E8]',
         className
       )}
     >
-      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-        {icon || <PackageOpen className="h-8 w-8" />}
+      <div className="mb-4 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#101010] text-[#C6A76A] border border-[#34312B]">
+        {icon || <PackageOpen className="h-7 w-7 sm:h-8 sm:w-8" />}
       </div>
-      <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{title}</h3>
-      <p className="mt-2 max-w-sm text-sm text-zinc-500 dark:text-zinc-400">{description}</p>
+      <h3 className="font-serif text-lg sm:text-xl font-normal text-[#F5F0E8]">{title}</h3>
+      <p className="mt-2 max-w-sm text-xs sm:text-sm text-[#A69F93] font-light">{description}</p>
       {actionLabel && (actionHref || onAction) && (
-        <div className="mt-6">
+        <div className="mt-6 w-full sm:w-auto">
           <Button
             href={actionHref}
             onClick={onAction}
-            variant="primary"
+            variant="accent"
             size="sm"
+            className="w-full sm:w-auto min-h-[44px]"
           >
             {actionLabel}
           </Button>

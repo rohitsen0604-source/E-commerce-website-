@@ -63,17 +63,17 @@ export function ProductSearch({
           className={cn(
             'w-full border border-[#34312B] bg-[#141312] py-2 pl-9 pr-8 text-xs text-[#F5F0E8] placeholder-[#736B5E] transition-all duration-300',
             'focus:border-[#C6A76A] focus:outline-hidden font-sans font-light',
-            variant === 'header' && 'h-9 sm:h-10'
+            variant === 'header' && 'h-10 sm:h-10'
           )}
         />
         {query && (
           <button
             type="button"
             onClick={clear}
-            className="absolute right-3 p-0.5 text-[#8C8275] hover:text-[#F5F0E8]"
+            className="absolute right-2 flex h-8 w-8 items-center justify-center text-[#8C8275] hover:text-[#F5F0E8]"
             aria-label="Clear search"
           >
-            <X className="h-3 w-3" />
+            <X className="h-3.5 w-3.5" />
           </button>
         )}
       </div>

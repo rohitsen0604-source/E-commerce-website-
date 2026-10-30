@@ -13,9 +13,9 @@ export function Footer() {
   return (
     <footer className="border-t border-[#34312B] bg-[#101010] text-[#A69D8F]">
       {/* Upper Main Footer */}
-      <div className="py-16 lg:py-24">
+      <div className="py-12 sm:py-16 lg:py-24">
         <Container size="xl">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-5">
             {/* Column 1: Brand Info & Bio */}
             <div className="lg:col-span-2 space-y-6">
               <Logo size="lg" href="/" />
@@ -120,23 +120,23 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar: Copyright & Compliance */}
-      <div className="border-t border-[#24221E] py-8 text-[11px] text-[#736B5E] tracking-wider uppercase font-light">
+      <div className="border-t border-[#24221E] py-6 sm:py-8 text-[11px] text-[#736B5E] tracking-wider uppercase font-light">
         <Container size="xl">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p>
               &copy; 2026 {contactConfig.legalEntityName}. All rights reserved. Ultra-Luxury Edition.
             </p>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy-policy" className="hover:text-[#C6A76A] transition-colors">
+            <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-6">
+              <Link href="/privacy-policy" className="hover:text-[#C6A76A] transition-colors py-1">
                 Privacy
               </Link>
-              <Link href="/terms-and-conditions" className="hover:text-[#C6A76A] transition-colors">
+              <Link href="/terms-and-conditions" className="hover:text-[#C6A76A] transition-colors py-1">
                 Terms
               </Link>
-              <Link href="/shipping-policy" className="hover:text-[#C6A76A] transition-colors">
+              <Link href="/shipping-policy" className="hover:text-[#C6A76A] transition-colors py-1">
                 Shipping
               </Link>
-              <Link href="/return-policy" className="hover:text-[#C6A76A] transition-colors">
+              <Link href="/return-policy" className="hover:text-[#C6A76A] transition-colors py-1">
                 Returns
               </Link>
             </div>

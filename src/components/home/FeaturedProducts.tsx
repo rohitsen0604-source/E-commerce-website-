@@ -13,10 +13,10 @@ export function FeaturedProducts() {
   const featured = getFeaturedProducts().slice(0, 4);
 
   return (
-    <section className="py-20 sm:py-28 bg-[#101010] text-[#F5F0E8] border-b border-[#24221E]">
+    <section className="py-12 sm:py-20 lg:py-28 bg-[#101010] text-[#F5F0E8] border-b border-[#24221E]">
       <Container size="xl">
         <ScrollReveal direction="up" delayMs={0}>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
             <SectionHeading
               badge="Spotlight Selection"
               title="Signature Artifacts"
@@ -30,7 +30,7 @@ export function FeaturedProducts() {
               variant="outline"
               size="sm"
               rightIcon={<ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />}
-              className="self-start sm:self-auto shrink-0"
+              className="w-full sm:w-auto shrink-0 min-h-[40px]"
             >
               All Products
             </Button>

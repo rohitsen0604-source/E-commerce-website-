@@ -74,7 +74,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="py-8 sm:py-14 bg-[#101010] text-[#F5F0E8] min-h-screen">
+      <div className="pt-8 pb-24 sm:py-14 bg-[#101010] text-[#F5F0E8] min-h-screen">
         <Container size="xl">
           {/* Breadcrumb Navigation */}
           <Breadcrumb

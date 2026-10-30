@@ -18,9 +18,9 @@ export function ProductSorting({
   className,
 }: ProductSortingProps) {
   return (
-    <div className={cn('flex items-center gap-2', className)}>
-      <label htmlFor="product-sort" className="text-xs font-semibold uppercase tracking-wider text-zinc-500 whitespace-nowrap">
-        Sort By:
+    <div className={cn('flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start', className)}>
+      <label htmlFor="product-sort" className="text-xs font-semibold uppercase tracking-wider text-[#A69F93] whitespace-nowrap">
+        Sort:
       </label>
       <Select
         id="product-sort"
@@ -30,7 +30,7 @@ export function ProductSorting({
           label: opt.label,
           value: opt.value,
         }))}
-        className="w-48 text-xs py-1.5"
+        className="flex-1 sm:w-48 text-xs py-2 min-h-[44px] sm:min-h-0"
       />
     </div>
   );

@@ -40,39 +40,40 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#101010] text-[#F5F0E8] py-20 sm:py-28 lg:py-36 border-b border-[#24221E]">
+    <section className="relative overflow-hidden bg-[#101010] text-[#F5F0E8] py-12 sm:py-20 lg:py-32 border-b border-[#24221E]">
       {/* Subtle warm champagne radial aura */}
       <div className="pointer-events-none absolute -top-40 right-10 h-[650px] w-[650px] rounded-full bg-[#C6A76A]/5 blur-[160px]" />
       <div className="pointer-events-none absolute -bottom-40 left-10 h-[500px] w-[500px] rounded-full bg-[#1C1B19] blur-[120px]" />
 
       <Container size="xl" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Text Column */}
-          <div className="lg:col-span-6 space-y-7 sm:space-y-8 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2.5 border border-[#34312B] bg-[#161513] px-4 py-1.5 shadow-sm">
+          <div className="lg:col-span-6 space-y-6 sm:space-y-8 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2.5 border border-[#34312B] bg-[#161513] px-3.5 py-1.5 shadow-sm">
               <span className="text-[#C6A76A] text-xs">⚜</span>
-              <span className="editorial-tag text-[#E8DDC8]">
+              <span className="editorial-tag text-[#E8DDC8] text-[9.5px] sm:text-[11px]">
                 {heroBanner?.tagline || 'THE OBSIDIAN & CHAMPAGNE COLLECTION'}
               </span>
             </div>
 
             {/* Shimmering Animated Gold Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide leading-[1.08] bg-gradient-to-r from-[#F5F0E8] via-[#E8DDC8] via-[#C6A76A] to-[#F5F0E8] bg-[length:200%_auto] animate-shimmer-text bg-clip-text text-transparent">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-wide leading-[1.12] bg-gradient-to-r from-[#F5F0E8] via-[#E8DDC8] via-[#C6A76A] to-[#F5F0E8] bg-[length:200%_auto] animate-shimmer-text bg-clip-text text-transparent">
               {heroBanner?.title || 'Curated Elegance for Modern Living'}
             </h1>
 
-            <p className="max-w-xl text-sm sm:text-base text-[#A69D8F] leading-relaxed font-light font-sans">
+            <p className="max-w-xl text-xs sm:text-base text-[#A69D8F] leading-relaxed font-light font-sans">
               {heroBanner?.subtitle ||
                 'Meticulously engineered audio, handcrafted Swiss horology, and pure cashmere artifacts crafted to transcend ordinary utility.'}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* CTAs - thumb friendly full width on mobile */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Button
                 href="/products"
                 variant="accent"
                 size="lg"
                 rightIcon={<ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />}
+                className="w-full sm:w-auto justify-center"
               >
                 {heroBanner?.buttonText || 'Explore Collection'}
               </Button>
@@ -82,22 +83,23 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 leftIcon={<MessageCircle className="h-3.5 w-3.5 text-[#C6A76A]" />}
+                className="w-full sm:w-auto justify-center"
               >
                 WhatsApp Support
               </Button>
             </div>
 
             {/* Micro Trust Indicators with gentle hover interactions */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-[#24221E] text-xs text-[#8C8275] font-light">
-              <div className="flex items-center gap-2.5 group cursor-default transition-colors hover:text-[#F5F0E8]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-[#24221E] text-[11px] sm:text-xs text-[#8C8275] font-light">
+              <div className="flex items-center gap-2 group cursor-default transition-colors hover:text-[#F5F0E8]">
                 <Truck className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 <span>Complimentary Express Courier</span>
               </div>
-              <div className="flex items-center gap-2.5 group cursor-default transition-colors hover:text-[#F5F0E8]">
+              <div className="flex items-center gap-2 group cursor-default transition-colors hover:text-[#F5F0E8]">
                 <ShieldCheck className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 <span>Individually Certified Provenance</span>
               </div>
-              <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1 group cursor-default transition-colors hover:text-[#F5F0E8]">
+              <div className="flex items-center gap-2 col-span-2 sm:col-span-1 group cursor-default transition-colors hover:text-[#F5F0E8]">
                 <Sparkles className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:text-[#E8DDC8]" />
                 <span>Bespoke Monogramming</span>
               </div>

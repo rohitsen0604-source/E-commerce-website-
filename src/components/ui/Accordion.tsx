@@ -38,7 +38,7 @@ export function Accordion({ items, allowMultiple = false, className }: Accordion
             <button
               type="button"
               onClick={() => toggle(item.id)}
-              className="flex w-full items-center justify-between text-left text-sm font-medium tracking-wide text-[#F5F0E8] transition-colors hover:text-[#C6A76A]"
+              className="flex min-h-[44px] w-full items-center justify-between text-left text-sm font-medium tracking-wide text-[#F5F0E8] transition-colors hover:text-[#C6A76A]"
               aria-expanded={isOpen}
             >
               <span className={cn(isOpen && 'text-[#C6A76A]')}>{item.title}</span>

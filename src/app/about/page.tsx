@@ -23,14 +23,14 @@ export default function AboutPage() {
 
         {/* Hero Header */}
         <ScrollReveal direction="up" delayMs={0}>
-          <div className="pt-8 pb-16 space-y-4 text-center max-w-3xl mx-auto">
+          <div className="pt-6 sm:pt-8 pb-10 sm:pb-16 space-y-3 sm:space-y-4 text-center max-w-3xl mx-auto">
             <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#C6A76A]">
               {aboutPageContent.tagline}
             </span>
-            <h1 className="font-serif text-4xl sm:text-6xl font-light tracking-tight text-[#F5F0E8] leading-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#F5F0E8] leading-tight">
               {aboutPageContent.title}
             </h1>
-            <p className="font-sans text-base sm:text-lg text-[#D8D2C7] leading-relaxed font-light">
+            <p className="font-sans text-sm sm:text-lg text-[#D8D2C7] leading-relaxed font-light">
               {aboutPageContent.heroText}
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
         {/* Story & Mission Block - Balanced Ivory Luxury Section */}
         <ScrollReveal direction="up" delayMs={100}>
-          <div className="rounded-2xl border border-[#E3DDD3] bg-[#F5F1E9] p-8 sm:p-14 mb-16 space-y-8 text-[#121110] transition-all duration-300 hover:shadow-xl">
+          <div className="rounded-2xl border border-[#E3DDD3] bg-[#F5F1E9] p-5 sm:p-14 mb-12 sm:mb-16 space-y-6 sm:space-y-8 text-[#121110] transition-all duration-300 hover:shadow-xl">
             <div className="max-w-2xl">
               <span className="text-[11px] font-medium tracking-[0.2em] text-[#C6A76A] uppercase">
                 Maison Manifesto
@@ -47,10 +47,10 @@ export default function AboutPage() {
                 The Philosophy of Conscious Materiality
               </h2>
             </div>
-            <p className="font-sans text-sm sm:text-base text-[#4A453E] leading-relaxed font-light">
+            <p className="font-sans text-xs sm:text-base text-[#4A453E] leading-relaxed font-light">
               {aboutPageContent.mission} Every object in our collection undergoes a rigorous curatorial evaluation: does it honor the integrity of its raw elements? Does it bring tactile pleasure to the user? Can it be repaired, maintained, and treasured over generations?
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#E3DDD3]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-[#E3DDD3]">
               <div className="space-y-3 group cursor-default transition-all duration-300 hover:-translate-y-1">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#101010] text-[#C6A76A] transition-transform duration-300 group-hover:scale-110">
                   <Compass className="h-5 w-5" />
@@ -100,11 +100,11 @@ export default function AboutPage() {
 
         {/* Call to Explore Collection */}
         <ScrollReveal direction="up" delayMs={200}>
-          <div className="group rounded-2xl border border-[#34312B] bg-[#161514] p-8 sm:p-14 text-center space-y-5 transition-all duration-500 hover:border-[#C6A76A]/50 hover:shadow-[0_0_35px_rgba(198,167,106,0.12)]">
+          <div className="group rounded-2xl border border-[#34312B] bg-[#161514] p-5 sm:p-14 text-center space-y-4 sm:space-y-5 transition-all duration-500 hover:border-[#C6A76A]/50 hover:shadow-[0_0_35px_rgba(198,167,106,0.12)]">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C6A76A]">
               Curated Acquisition
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#F5F0E8]">
+            <h2 className="font-serif text-2xl sm:text-4xl font-light tracking-tight text-[#F5F0E8]">
               Discover the Studio Pieces
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#D8D2C7] font-light max-w-md mx-auto leading-relaxed">
@@ -116,6 +116,7 @@ export default function AboutPage() {
                 variant="accent"
                 size="md"
                 rightIcon={<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
+                className="w-full sm:w-auto min-h-[44px]"
               >
                 Browse The Collection
               </Button>
