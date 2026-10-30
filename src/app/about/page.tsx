@@ -5,6 +5,7 @@ import { constructMetadata } from '@/lib/metadata';
 import { Container } from '@/components/layout/Container';
 import { Breadcrumb } from '@/components/shared/Breadcrumb';
 import { Button } from '@/components/shared/Button';
+import { MilestonesTimeline } from '@/components/about/MilestonesTimeline';
 
 export const metadata: Metadata = constructMetadata({
   title: 'About Our Atelier & Philosophy',
@@ -87,22 +88,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="relative border-l border-[#34312B] ml-4 sm:ml-32 space-y-8">
-            {aboutPageContent.milestones.map((m, i) => (
-              <div key={i} className="relative pl-6 sm:pl-8">
-                <div className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border border-[#C6A76A] bg-[#101010]" />
-                <span className="font-sans text-xs font-semibold text-[#C6A76A]">
-                  {m.year}
-                </span>
-                <h3 className="font-serif text-lg font-light text-[#F5F0E8] mt-0.5">
-                  {m.title}
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#A69F93] mt-1 leading-relaxed font-light">
-                  {m.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MilestonesTimeline milestones={aboutPageContent.milestones} />
         </div>
 
         {/* Call to Explore Collection */}
