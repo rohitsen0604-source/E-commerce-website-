@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { contactConfig } from '@/config/contact';
@@ -11,7 +10,7 @@ import { Logo } from '@/components/shared/Logo';
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#34312B] bg-[#101010] text-[#A69D8F]">
+    <footer className="border-t border-[#34312B] bg-[#101010] text-[#A69F93]">
       {/* Upper Main Footer */}
       <div className="py-16 lg:py-24">
         <Container size="xl">
@@ -40,7 +39,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="hover:text-[#C6A76A] transition-colors"
+                      className="inline-block transition-all duration-200 hover:translate-x-1.5 hover:text-[#C6A76A]"
                     >
                       {item.title}
                     </Link>
@@ -59,7 +58,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="hover:text-[#C6A76A] transition-colors"
+                      className="inline-block transition-all duration-200 hover:translate-x-1.5 hover:text-[#C6A76A]"
                     >
                       {item.title}
                     </Link>
@@ -69,7 +68,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="hover:text-[#C6A76A] transition-colors"
+                      className="inline-block transition-all duration-200 hover:translate-x-1.5 hover:text-[#C6A76A]"
                     >
                       {item.title}
                     </Link>
@@ -84,15 +83,15 @@ export function Footer() {
                 Private Concierge
               </h3>
               <ul className="space-y-3.5 text-xs text-[#8C8275] font-light leading-relaxed">
-                <li className="flex items-start gap-2.5">
-                  <MapPin className="h-3.5 w-3.5 text-[#C6A76A] shrink-0 mt-0.5" />
+                <li className="flex items-start gap-2.5 group">
+                  <MapPin className="h-3.5 w-3.5 text-[#C6A76A] shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-110" />
                   <span>
                     {contactConfig.address.street}, {contactConfig.address.city},{' '}
                     {contactConfig.address.state} {contactConfig.address.postalCode}
                   </span>
                 </li>
-                <li className="flex items-center gap-2.5">
-                  <Mail className="h-3.5 w-3.5 text-[#C6A76A] shrink-0" />
+                <li className="flex items-center gap-2.5 group">
+                  <Mail className="h-3.5 w-3.5 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <a
                     href={`mailto:${contactConfig.email}`}
                     className="hover:text-[#C6A76A] transition-colors"
@@ -100,8 +99,8 @@ export function Footer() {
                     {contactConfig.email}
                   </a>
                 </li>
-                <li className="flex items-center gap-2.5">
-                  <Phone className="h-3.5 w-3.5 text-[#C6A76A] shrink-0" />
+                <li className="flex items-center gap-2.5 group">
+                  <Phone className="h-3.5 w-3.5 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <a
                     href={`tel:${contactConfig.whatsappNumber}`}
                     className="hover:text-[#C6A76A] transition-colors"

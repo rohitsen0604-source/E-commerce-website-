@@ -9,6 +9,7 @@ import { Breadcrumb } from '@/components/shared/Breadcrumb';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { ProductCatalogClient } from '@/components/products/ProductCatalogClient';
 import { PageLoader } from '@/components/shared/PageLoader';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Complete Catalog & Curated Artifacts',
@@ -28,14 +29,16 @@ export default function ProductsPage() {
         <Breadcrumb items={[{ label: 'Catalog & Masterpieces' }]} />
 
         <div className="pt-4 pb-12">
-          <SectionHeading
-            badge="The Maison Vault"
-            title="Curated Masterpieces"
-            description="Explore our full static archive. Filter by atelier maison, category, and availability to acquire refined artifacts."
-            alignment="left"
-            theme="dark"
-            className="mb-10"
-          />
+          <ScrollReveal direction="up" delayMs={0}>
+            <SectionHeading
+              badge="The Maison Vault"
+              title="Curated Masterpieces"
+              description="Explore our full static archive. Filter by atelier maison, category, and availability to acquire refined artifacts."
+              alignment="left"
+              theme="dark"
+              className="mb-10"
+            />
+          </ScrollReveal>
 
           <Suspense fallback={<PageLoader label="Loading product catalog..." />}>
             <ProductCatalogClient

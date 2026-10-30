@@ -10,6 +10,7 @@ import { ProductGallery } from '@/components/products/ProductGallery';
 import { ProductInfo } from '@/components/products/ProductInfo';
 import { ProductSpecifications } from '@/components/products/ProductSpecifications';
 import { RelatedProducts } from '@/components/products/RelatedProducts';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
 
 interface ProductDetailPageProps {
   params: Promise<{
@@ -87,31 +88,28 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
           {/* Main Product Showcase: Gallery on Left, Info on Right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            <div className="lg:col-span-7 sticky top-28">
+            <div className="lg:col-span-7 sticky top-28 animate-fade-in">
               <ProductGallery
                 images={product.images}
                 productName={product.name}
               />
             </div>
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 animate-fade-in-up">
               <ProductInfo product={product} />
             </div>
           </div>
 
-          {/* Technical Specifications Section */}
-          <div className="mt-16 pt-12 border-t border-[#34312B]">
-            <div className="max-w-4xl mx-auto">
-              <ProductSpecifications specifications={product.specifications} />
-            </div>
-          </div>
+          {/* Detailed Specifications and Material Provenance */}
+          <ScrollReveal direction="up" delayMs={100} className="mt-16 sm:mt-24">
+            <ProductSpecifications specifications={product.specifications} />
+          </ScrollReveal>
 
-          {/* Related Products */}
-          <div className="mt-16">
-            <RelatedProducts
-              products={related}
-              currentProductId={product.id}
-            />
-          </div>
+          {/* Related / Complementary Pieces */}
+          {related.length > 0 && (
+            <ScrollReveal direction="up" delayMs={150} className="mt-8">
+              <RelatedProducts products={related} currentProductId={product.id} />
+            </ScrollReveal>
+          )}
         </Container>
       </div>
     </>

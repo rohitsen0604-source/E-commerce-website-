@@ -11,7 +11,7 @@ export function ContactInformation() {
   );
 
   return (
-    <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-8 sm:p-10 text-[#F5F0E8] space-y-8">
+    <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-8 sm:p-10 text-[#F5F0E8] space-y-8 shadow-xl transition-all duration-500 hover:border-[#C6A76A]/50">
       <div>
         <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C6A76A]">
           Direct Concierge
@@ -25,8 +25,8 @@ export function ContactInformation() {
       </div>
 
       <div className="space-y-6 text-sm">
-        <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A]">
+        <div className="flex items-start gap-4 group">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A] transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C6A76A]">
             <MapPin className="h-5 w-5" />
           </div>
           <div>
@@ -39,8 +39,8 @@ export function ContactInformation() {
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A]">
+        <div className="flex items-start gap-4 group">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A] transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C6A76A]">
             <Mail className="h-5 w-5" />
           </div>
           <div>
@@ -54,8 +54,8 @@ export function ContactInformation() {
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A]">
+        <div className="flex items-start gap-4 group">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A] transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C6A76A]">
             <Phone className="h-5 w-5" />
           </div>
           <div>
@@ -66,8 +66,8 @@ export function ContactInformation() {
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A]">
+        <div className="flex items-start gap-4 group">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#34312B] bg-[#101010] text-[#C6A76A] transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C6A76A]">
             <Clock className="h-5 w-5" />
           </div>
           <div>
@@ -78,14 +78,18 @@ export function ContactInformation() {
         </div>
       </div>
 
-      {/* Instant WhatsApp Priority Link */}
+      {/* Instant WhatsApp Priority Link with Live Beacon & Pulse */}
       <div className="pt-2">
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl border border-[#C6A76A] bg-[#101010] px-6 py-3.5 text-xs font-medium uppercase tracking-wider text-[#C6A76A] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
+          className="group flex items-center justify-center gap-2.5 rounded-xl border border-[#C6A76A] bg-[#101010] px-6 py-3.5 text-xs font-medium uppercase tracking-wider text-[#C6A76A] hover:bg-[#C6A76A] hover:text-[#101010] animate-badge-pulse shadow-[0_0_20px_rgba(198,167,106,0.25)] hover:shadow-[0_0_35px_rgba(198,167,106,0.55)] hover:scale-[1.02] transition-all duration-300"
         >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
           <MessageCircle className="h-4 w-4" />
           <span>Launch Concierge Priority Chat</span>
         </a>

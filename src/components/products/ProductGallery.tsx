@@ -54,6 +54,11 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           }
         />
 
+        {/* Animated Specular Light Sweep */}
+        <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
+          <div className="animate-light-sweep absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+        </div>
+
         {/* Hover Zoom Hint & Fullscreen Trigger */}
         <div className="absolute right-4 top-4 flex items-center gap-2">
           <button

@@ -308,3 +308,5 @@ This Phase 1 architecture is engineered to enable backend expansion without disc
 4. **Authentication & Admin Dashboard:**
    - NextAuth / Auth.js can be integrated under `src/app/api/auth/`.
    - An isolated admin route group `src/app/(admin)/` can reuse the existing `Input`, `Select`, `Button`, and `Modal` UI primitives.
+
+

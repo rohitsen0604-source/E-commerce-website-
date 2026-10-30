@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
+import { LuxuryMarquee } from '@/components/home/LuxuryMarquee';
 import { FeaturedCategories } from '@/components/home/FeaturedCategories';
 import { FeaturedProducts } from '@/components/home/FeaturedProducts';
 import { NewArrivals } from '@/components/home/NewArrivals';
@@ -11,28 +12,31 @@ import { Testimonials } from '@/components/home/Testimonials';
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Showcase Section */}
+      {/* 1. Hero Showcase Section with Magnetic Cursor Light & 3D Tilt */}
       <HeroSection />
 
-      {/* 2. Featured Category Grid */}
+      {/* 2. Prestige Luxury Marquee Ribbon */}
+      <LuxuryMarquee />
+
+      {/* 3. Featured Category Grid with Staggered Scroll-Reveal */}
       <FeaturedCategories />
 
-      {/* 3. Featured Products Grid */}
+      {/* 4. Featured Products Grid */}
       <FeaturedProducts />
 
-      {/* 4. Atelier & Brand Philosophy */}
+      {/* 5. Atelier & Brand Philosophy with Metric Badges */}
       <BrandIntroduction />
 
-      {/* 5. New Arrivals Showcase */}
+      {/* 6. New Arrivals Showcase */}
       <NewArrivals />
 
-      {/* 6. Promotional Special Release Banner */}
+      {/* 7. Promotional Special Release Banner with Light Sheen */}
       <PromotionalBanner />
 
-      {/* 7. Best Sellers Collection */}
+      {/* 8. Best Sellers Collection */}
       <BestSellers />
 
-      {/* 8. Collector Testimonials */}
+      {/* 9. Collector Testimonials with Interactive Hover */}
       <Testimonials />
     </div>
   );
