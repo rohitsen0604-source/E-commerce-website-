@@ -19,6 +19,14 @@ export function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const handleOpenMobileNav = React.useCallback(() => {
+    setMobileNavOpen(true);
+  }, []);
+
+  const handleCloseMobileNav = React.useCallback(() => {
+    setMobileNavOpen(false);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -93,11 +101,11 @@ export function Header() {
               {/* Mobile Menu Button - 44x44px touch area */}
               <button
                 type="button"
-                onClick={() => setMobileNavOpen(true)}
-                className="inline-flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#34312B] bg-[#141312] text-[#D8D2C7] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors"
+                onClick={handleOpenMobileNav}
+                className="inline-flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#34312B] bg-[#141312] text-[#E8DDC8] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors cursor-pointer select-none"
                 aria-label="Open mobile menu"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6 text-[#C6A76A]" />
               </button>
             </div>
           </div>
@@ -112,7 +120,7 @@ export function Header() {
       {/* Mobile Navigation Drawer */}
       <MobileNavigation
         isOpen={mobileNavOpen}
-        onClose={() => setMobileNavOpen(false)}
+        onClose={handleCloseMobileNav}
       />
     </header>
   );

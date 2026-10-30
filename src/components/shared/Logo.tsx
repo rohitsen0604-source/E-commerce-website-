@@ -7,6 +7,7 @@ interface LogoProps {
   className?: string;
   showSubtitle?: boolean;
   href?: string;
+  onClick?: () => void;
 }
 
 export function Logo({
@@ -14,6 +15,7 @@ export function Logo({
   className,
   showSubtitle = true,
   href = '/',
+  onClick,
 }: LogoProps) {
   const content = (
     <div className={cn('inline-flex items-center gap-3 select-none group', className)}>
@@ -89,7 +91,7 @@ export function Logo({
 
   if (href) {
     return (
-      <Link href={href} className="inline-block focus:outline-none">
+      <Link href={href} onClick={onClick} className="inline-block focus:outline-none">
         {content}
       </Link>
     );

@@ -29,8 +29,13 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
     };
   }, [isOpen]);
 
+  const prevPathname = React.useRef(pathname);
+
   useEffect(() => {
-    onClose();
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      onClose();
+    }
   }, [pathname, onClose]);
 
   if (!isOpen) return null;
@@ -54,11 +59,11 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-5 border-b border-[#24221E]">
-            <Logo size="sm" href="/" />
+            <Logo size="sm" href="/" onClick={onClose} />
             <button
               type="button"
               onClick={onClose}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border border-[#34312B] text-[#A69D8F] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border border-[#34312B] text-[#A69D8F] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors cursor-pointer"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -77,8 +82,9 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={onClose}
                   className={cn(
-                    'flex items-center justify-between min-h-[44px] py-2.5 px-2 rounded-lg text-xs tracking-[0.2em] uppercase font-medium transition-colors',
+                    'flex items-center justify-between min-h-[44px] py-2.5 px-3 rounded-lg text-xs tracking-[0.2em] uppercase font-medium transition-colors',
                     isActive
                       ? 'text-[#C6A76A] bg-[#161514] border border-[#34312B]/60'
                       : 'text-[#A69D8F] hover:text-[#F5F0E8] hover:bg-[#141312]'
@@ -101,7 +107,8 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 <Link
                   key={cat.href}
                   href={cat.href}
-                  className="flex items-center justify-between min-h-[40px] py-2 px-2 rounded-lg text-xs font-light text-[#D8D0C3] hover:text-[#C6A76A] hover:bg-[#141312] transition-colors"
+                  onClick={onClose}
+                  className="flex items-center justify-between min-h-[40px] py-2 px-3 rounded-lg text-xs font-light text-[#D8D0C3] hover:text-[#C6A76A] hover:bg-[#141312] transition-colors"
                 >
                   <span>{cat.title}</span>
                   {cat.badge && (
