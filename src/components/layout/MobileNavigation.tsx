@@ -8,6 +8,7 @@ import { navigationConfig } from '@/config/navigation';
 import { contactConfig } from '@/config/contact';
 import { buildWhatsAppLink, cn } from '@/lib/utils';
 import { SocialLinks } from '@/components/shared/SocialLinks';
+import { Logo } from '@/components/shared/Logo';
 
 export interface MobileNavigationProps {
   isOpen: boolean;
@@ -52,14 +53,12 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
       <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-[#101010] border-l border-[#34312B] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto animate-fade-in-down">
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between pb-6 border-b border-[#24221E]">
-            <span className="editorial-tag text-[#C6A76A]">
-              Navigation
-            </span>
+          <div className="flex items-center justify-between pb-5 border-b border-[#24221E]">
+            <Logo size="sm" href="/" />
             <button
               type="button"
               onClick={onClose}
-              className="p-1 text-[#8C8275] hover:text-[#F5F0E8]"
+              className="p-1.5 rounded-md border border-[#34312B] text-[#8C8275] hover:text-[#F5F0E8] hover:border-[#C6A76A]"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />

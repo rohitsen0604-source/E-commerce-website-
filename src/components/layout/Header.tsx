@@ -12,6 +12,7 @@ import { Navigation } from './Navigation';
 import { MobileNavigation } from './MobileNavigation';
 import { AnnouncementBar } from './AnnouncementBar';
 import { ProductSearch } from '@/components/products/ProductSearch';
+import { Logo } from '@/components/shared/Logo';
 
 export function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -32,18 +33,7 @@ export function Header() {
           <div className="flex h-18 sm:h-22 items-center justify-between gap-4">
             {/* Logo */}
             <div className="flex items-center gap-6 shrink-0">
-              <Link href="/" className="flex items-center gap-2 group">
-                <div className="relative h-10 w-36 sm:h-11 sm:w-44">
-                  <Image
-                    src={siteConfig.logo}
-                    alt={siteConfig.name}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 140px, 176px"
-                    className="object-contain"
-                  />
-                </div>
-              </Link>
+              <Logo size="md" href="/" />
             </div>
 
             {/* Desktop Navigation Links */}

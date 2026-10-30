@@ -25,7 +25,7 @@ export function HeroSection() {
       <Container size="xl" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-7 sm:space-y-9 animate-fade-in-up">
+          <div className="lg:col-span-6 space-y-7 sm:space-y-8 animate-fade-in-up">
             <div className="inline-flex items-center gap-2.5 border border-[#34312B] bg-[#161513] px-4 py-1.5">
               <span className="text-[#C6A76A] text-xs">⚜</span>
               <span className="editorial-tag text-[#E8DDC8]">
@@ -33,7 +33,7 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-wide leading-[1.05] text-[#F5F0E8]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide leading-[1.08] text-[#F5F0E8]">
               {heroBanner?.title || 'Curated Elegance for Modern Living'}
             </h1>
 
@@ -80,32 +80,40 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Hero Cinematic Image */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative aspect-4/3 sm:aspect-square w-full overflow-hidden border border-[#34312B] bg-[#161514] shadow-2xl animate-scale-up">
-              <Image
-                src={heroBanner?.imageUrl || '/images/banners/hero-banner.svg'}
-                alt="Aura Atelier Master Collection"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#101010] via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-6 left-6 right-6 p-5 border border-[#34312B] bg-[#101010]/90 backdrop-blur-md flex items-center justify-between">
+          {/* Right Hero Cinematic Showcase */}
+          <div className="lg:col-span-6 relative">
+            <div className="group relative rounded-2xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5 shadow-2xl transition-all duration-500 hover:border-[#C6A76A]/40 hover:shadow-[0_0_35px_rgba(198,167,106,0.12)]">
+              {/* Image Frame matching exact 1376x768 (1.79:1) ratio with zero cropping */}
+              <div
+                className="relative w-full overflow-hidden rounded-xl bg-[#0d0d0c]"
+                style={{ aspectRatio: '1376 / 768' }}
+              >
+                <Image
+                  src={heroBanner?.imageUrl || '/images/banners/hero-banner.jpg'}
+                  alt="Aurore Collection - Swiss Horology & Handcrafted Artifacts"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                />
+              </div>
+
+              {/* Signature Release Footer Strip - Cleanly positioned below image without obscuring text */}
+              <div className="mt-3 px-4 py-3 rounded-xl border border-[#2B2823] bg-[#11100F] flex items-center justify-between">
                 <div>
-                  <p className="editorial-tag text-[#C6A76A]">
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-[#C6A76A]">
                     Signature Release
                   </p>
-                  <p className="font-serif text-base font-normal text-[#F5F0E8] mt-0.5">
-                    Veloce Acoustics & Horology
+                  <p className="font-serif text-sm sm:text-base font-light text-[#F5F0E8] mt-0.5">
+                    Veloce Acoustics &amp; Swiss Horology
                   </p>
                 </div>
                 <Link
                   href="/categories/electronics"
-                  className="editorial-tag text-[#E8DDC8] hover:text-[#C6A76A] transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#C6A76A]/40 bg-[#C6A76A]/10 px-4 py-1.5 text-[11px] font-sans font-medium uppercase tracking-wider text-[#C6A76A] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
                 >
-                  View &rarr;
+                  <span>View</span>
+                  <span>&rarr;</span>
                 </Link>
               </div>
             </div>

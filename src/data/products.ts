@@ -24,8 +24,8 @@ export const products: Product[] = [
     categoryId: 'cat-electronics',
     brandId: 'brand-1',
     images: [
-      '/images/products/headphones.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/headphones.jpg',
+      '/images/banners/promo-banner.jpg',
     ],
     features: [
       'Custom 45mm Beryllium Acoustic Transducers',
@@ -71,8 +71,8 @@ export const products: Product[] = [
     categoryId: 'cat-accessories',
     brandId: 'brand-5',
     images: [
-      '/images/products/watch.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/watch.jpg',
+      '/images/banners/hero-banner.jpg',
     ],
     features: [
       'Japanese 28-Jewel High-Beat Automatic Movement',
@@ -117,8 +117,8 @@ export const products: Product[] = [
     categoryId: 'cat-accessories',
     brandId: 'brand-2',
     images: [
-      '/images/products/bag.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/bag.jpg',
+      '/images/banners/hero-banner.jpg',
     ],
     features: [
       '100% Full-grain Tuscan vegetable-tanned calfskin leather',
@@ -163,8 +163,8 @@ export const products: Product[] = [
     categoryId: 'cat-electronics',
     brandId: 'brand-1',
     images: [
-      '/images/products/keyboard.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/keyboard.jpg',
+      '/images/banners/promo-banner.jpg',
     ],
     features: [
       'Solid CNC 6063 anodized aluminum chassis',
@@ -209,8 +209,8 @@ export const products: Product[] = [
     categoryId: 'cat-apparel',
     brandId: 'brand-2',
     images: [
-      '/images/products/sweater.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/sweater.jpg',
+      '/images/products/bag.jpg',
     ],
     features: [
       '100% Grade-A Mongolian long-staple cashmere',
@@ -256,8 +256,8 @@ export const products: Product[] = [
     categoryId: 'cat-home-living',
     brandId: 'brand-3',
     images: [
-      '/images/products/lamp.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/lamp.jpg',
+      '/images/products/coffee.jpg',
     ],
     features: [
       'Heavy weighted solid spun brass base',
@@ -301,8 +301,8 @@ export const products: Product[] = [
     categoryId: 'cat-accessories',
     brandId: 'brand-5',
     images: [
-      '/images/products/sunglasses.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/sunglasses.jpg',
+      '/images/banners/hero-banner.jpg',
     ],
     features: [
       'Aerospace Japanese Beta-Titanium frame architecture',
@@ -347,8 +347,8 @@ export const products: Product[] = [
     categoryId: 'cat-home-living',
     brandId: 'brand-4',
     images: [
-      '/images/products/coffee.svg',
-      '/images/placeholders/product-placeholder.svg',
+      '/images/products/coffee.jpg',
+      '/images/products/lamp.jpg',
     ],
     features: [
       'Hand-thrown high-fire mineral stoneware ceramic dripper',

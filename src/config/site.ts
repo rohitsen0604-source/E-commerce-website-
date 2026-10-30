@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Aura Commerce',
+  name: 'Aura Atelier',
   shortName: 'Aura',
   description: 'Premium curated lifestyle, electronics, apparel, and design artifacts. Discover timeless craftsmanship and modern innovation.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example-ecommerce.com',

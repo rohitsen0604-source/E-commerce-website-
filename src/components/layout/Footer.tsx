@@ -7,6 +7,7 @@ import { contactConfig } from '@/config/contact';
 import { navigationConfig } from '@/config/navigation';
 import { Container } from './Container';
 import { SocialLinks } from '@/components/shared/SocialLinks';
+import { Logo } from '@/components/shared/Logo';
 
 export function Footer() {
   return (
@@ -17,17 +18,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
             {/* Column 1: Brand Info & Bio */}
             <div className="lg:col-span-2 space-y-6">
-              <Link href="/" className="inline-block">
-                <div className="relative h-10 w-44">
-                  <Image
-                    src={siteConfig.logo}
-                    alt={siteConfig.name}
-                    fill
-                    sizes="176px"
-                    className="object-contain"
-                  />
-                </div>
-              </Link>
+              <Logo size="lg" href="/" />
               <p className="max-w-md text-xs sm:text-sm leading-relaxed text-[#8C8275] font-light">
                 {siteConfig.description}
               </p>
