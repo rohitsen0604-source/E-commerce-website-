@@ -12,7 +12,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -23,7 +23,7 @@
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-16px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -42,46 +42,179 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 15px rgba(198, 167, 106, 0.25);
   }
   50% {
-    box-shadow: 0 0 25px rgba(6, 182, 212, 0.45);
+    box-shadow: 0 0 35px rgba(198, 167, 106, 0.55);
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes levitateReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes goldGlowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  30%, 100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(198, 167, 106, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(198, 167, 106, 0.25);
+  }
+}
+
+/* Utility classes */
 .animate-fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in-down {
-  animation: fadeInDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-scale-up {
-  animation: scaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite linear;
+  animation: scaleUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-pulse-glow {
   animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marqueeReverse 24s linear infinite;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+.animate-levitate {
+  animation: levitate 5s ease-in-out infinite;
+}
+
+.animate-levitate-reverse {
+  animation: levitateReverse 6s ease-in-out infinite;
+}
+
+.animate-shimmer-text {
+  background-size: 200% auto;
+  animation: shimmerText 6s linear infinite;
+}
+
+.animate-gold-pulse {
+  animation: goldGlowPulse 4s ease-in-out infinite;
+}
+
+.animate-light-sweep {
+  animation: lightSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-badge-pulse {
+  animation: badgePulse 3s ease-in-out infinite;
 }

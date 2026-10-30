@@ -30,20 +30,26 @@ export function Navigation() {
               <Link
                 href={item.href}
                 className={cn(
-                  'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium tracking-[0.18em] uppercase transition-colors',
+                  'group relative inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium tracking-[0.18em] uppercase transition-colors',
                   isActive
                     ? 'text-[#C6A76A]'
                     : 'text-[#A69D8F] hover:text-[#F5F0E8]'
                 )}
               >
                 <span>{item.title}</span>
-                <ChevronDown className={cn('h-3 w-3 transition-transform duration-200 text-[#8C8275]', categoriesOpen && 'rotate-180 text-[#C6A76A]')} />
+                <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 text-[#8C8275]', categoriesOpen && 'rotate-180 text-[#C6A76A]')} />
+                <span
+                  className={cn(
+                    'absolute bottom-0 left-3 right-3 h-[2px] bg-[#C6A76A] transition-all duration-300',
+                    isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
+                  )}
+                />
               </Link>
 
-              {/* Flyout dropdown */}
+              {/* Flyout dropdown with smooth animation */}
               {categoriesOpen && (
-                <div className="absolute top-full left-0 z-50 w-64 pt-3 animate-fade-in">
-                  <div className="rounded-none border border-[#34312B] bg-[#141312] p-3 shadow-2xl">
+                <div className="absolute top-full left-0 z-50 w-64 pt-3 animate-fade-in-down">
+                  <div className="rounded-xl border border-[#34312B] bg-[#141312] p-3 shadow-2xl backdrop-blur-md">
                     <div className="px-3 py-1.5 editorial-tag text-[#8C8275] border-b border-[#24221E] pb-2">
                       Collections
                     </div>
@@ -52,7 +58,7 @@ export function Navigation() {
                         <Link
                           key={cat.href}
                           href={cat.href}
-                          className="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#D8D0C3] hover:bg-[#1C1B19] hover:text-[#C6A76A] transition-colors"
+                          className="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#D8D0C3] rounded-lg hover:bg-[#1C1B19] hover:text-[#C6A76A] transition-all duration-200"
                         >
                           <span>{cat.title}</span>
                           {cat.badge && (
@@ -66,7 +72,7 @@ export function Navigation() {
                     <div className="mt-2 border-t border-[#24221E] pt-2">
                       <Link
                         href="/categories"
-                        className="block px-3 py-1.5 text-center text-[10px] tracking-widest uppercase font-semibold text-[#C6A76A] hover:text-[#E8DDC8]"
+                        className="block px-3 py-1.5 text-center text-[10px] tracking-widest uppercase font-semibold text-[#C6A76A] hover:text-[#E8DDC8] transition-colors"
                       >
                         All Categories →
                       </Link>
@@ -83,13 +89,19 @@ export function Navigation() {
             key={item.href}
             href={item.href}
             className={cn(
-              'px-3 py-1.5 text-xs font-medium tracking-[0.18em] uppercase transition-colors',
+              'group relative px-3 py-1.5 text-xs font-medium tracking-[0.18em] uppercase transition-colors',
               isActive
-                ? 'text-[#C6A76A] border-b border-[#C6A76A]'
-                : 'text-[#A69D8F] hover:text-[#F5F0E8]'
+                ? 'text-[#C6A76A]'
+                : 'text-[#A69F93] hover:text-[#F5F0E8]'
             )}
           >
             {item.title}
+            <span
+              className={cn(
+                'absolute bottom-0 left-3 right-3 h-[2px] bg-[#C6A76A] transition-all duration-300',
+                isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
+              )}
+            />
           </Link>
         );
       })}

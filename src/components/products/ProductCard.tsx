@@ -29,7 +29,7 @@ export function ProductCard({ product, priority = false, className }: ProductCar
   return (
     <div
       className={cn(
-        'group relative flex flex-col bg-[#FFFFFF] border border-[#E3DDD3] transition-all duration-500 hover:border-[#C6A76A]/60 hover:shadow-xl',
+        'group relative flex flex-col bg-[#FFFFFF] border border-[#E3DDD3] transition-all duration-500 hover:border-[#C6A76A] hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(198,167,106,0.18)]',
         className
       )}
     >
@@ -42,7 +42,7 @@ export function ProductCard({ product, priority = false, className }: ProductCar
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             priority={priority}
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         </Link>
 

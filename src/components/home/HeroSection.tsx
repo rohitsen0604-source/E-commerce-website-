@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck, Truck, Sparkles, MessageCircle } from 'lucide-react';
@@ -10,11 +12,32 @@ import { Button } from '@/components/shared/Button';
 
 export function HeroSection() {
   const heroBanner = getHeroBanner();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardRotate, setCardRotate] = useState({ x: 0, y: 0 });
 
   const whatsappHref = buildWhatsAppLink(
     contactConfig.whatsappNumber,
     contactConfig.whatsappMessageTemplates.generalInquiry
   );
+
+  // Subtle interactive 3D tilt effect on mouse hover
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+
+    setCardRotate({ x: rotateX, y: rotateY });
+  };
+
+  const handleCardMouseLeave = () => {
+    setCardRotate({ x: 0, y: 0 });
+  };
 
   return (
     <section className="relative overflow-hidden bg-[#101010] text-[#F5F0E8] py-20 sm:py-28 lg:py-36 border-b border-[#24221E]">
@@ -26,14 +49,15 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-7 sm:space-y-8 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2.5 border border-[#34312B] bg-[#161513] px-4 py-1.5">
+            <div className="inline-flex items-center gap-2.5 border border-[#34312B] bg-[#161513] px-4 py-1.5 shadow-sm">
               <span className="text-[#C6A76A] text-xs">⚜</span>
               <span className="editorial-tag text-[#E8DDC8]">
                 {heroBanner?.tagline || 'THE OBSIDIAN & CHAMPAGNE COLLECTION'}
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide leading-[1.08] text-[#F5F0E8]">
+            {/* Shimmering Animated Gold Headline */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-wide leading-[1.08] bg-gradient-to-r from-[#F5F0E8] via-[#E8DDC8] via-[#C6A76A] to-[#F5F0E8] bg-[length:200%_auto] animate-shimmer-text bg-clip-text text-transparent">
               {heroBanner?.title || 'Curated Elegance for Modern Living'}
             </h1>
 
@@ -48,7 +72,7 @@ export function HeroSection() {
                 href="/products"
                 variant="accent"
                 size="lg"
-                rightIcon={<ArrowRight className="h-3.5 w-3.5" />}
+                rightIcon={<ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />}
               >
                 {heroBanner?.buttonText || 'Explore Collection'}
               </Button>
@@ -63,26 +87,53 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Micro Trust Indicators */}
+            {/* Micro Trust Indicators with gentle hover interactions */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-[#24221E] text-xs text-[#8C8275] font-light">
-              <div className="flex items-center gap-2.5">
-                <Truck className="h-4 w-4 text-[#C6A76A] shrink-0" />
+              <div className="flex items-center gap-2.5 group cursor-default transition-colors hover:text-[#F5F0E8]">
+                <Truck className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 <span>Complimentary Express Courier</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck className="h-4 w-4 text-[#C6A76A] shrink-0" />
+              <div className="flex items-center gap-2.5 group cursor-default transition-colors hover:text-[#F5F0E8]">
+                <ShieldCheck className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 <span>Individually Certified Provenance</span>
               </div>
-              <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                <Sparkles className="h-4 w-4 text-[#C6A76A] shrink-0" />
+              <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1 group cursor-default transition-colors hover:text-[#F5F0E8]">
+                <Sparkles className="h-4 w-4 text-[#C6A76A] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:text-[#E8DDC8]" />
                 <span>Bespoke Monogramming</span>
               </div>
             </div>
           </div>
 
-          {/* Right Hero Cinematic Showcase */}
-          <div className="lg:col-span-6 relative">
-            <div className="group relative rounded-2xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5 shadow-2xl transition-all duration-500 hover:border-[#C6A76A]/40 hover:shadow-[0_0_35px_rgba(198,167,106,0.12)]">
+          {/* Right Hero Cinematic Showcase with Floating Card & Glass Badges */}
+          <div className="lg:col-span-6 relative [perspective:1000px]">
+            {/* Floating Top-Left Glass Badge */}
+            <div className="animate-levitate absolute -top-4 -left-3 sm:-left-6 z-30 hidden sm:flex items-center gap-2 rounded-full border border-[#C6A76A]/60 bg-[#141312]/95 px-3.5 py-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+              <span className="text-[#C6A76A] text-xs animate-twinkle">⚜</span>
+              <span className="font-sans text-[11px] font-semibold tracking-wider text-[#E8DDC8]">
+                100% Certified Heirloom
+              </span>
+            </div>
+
+            {/* Floating Bottom-Right Glass Badge */}
+            <div className="animate-levitate-reverse absolute -bottom-3 -right-2 sm:-right-4 z-30 hidden sm:flex items-center gap-2 rounded-full border border-[#34312B] bg-[#161514]/95 px-3.5 py-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+              <span className="text-[#C6A76A] text-xs">★</span>
+              <span className="font-sans text-[11px] font-medium text-[#D8D2C7]">
+                4.98 Connoisseur Acclaim
+              </span>
+            </div>
+
+            {/* Main Interactive Showcase Card with 3D Tilt */}
+            <div
+              ref={cardRef}
+              onMouseMove={handleCardMouseMove}
+              onMouseLeave={handleCardMouseLeave}
+              style={{
+                transform: `rotateX(${cardRotate.x}deg) rotateY(${cardRotate.y}deg)`,
+                transition: cardRotate.x === 0 ? 'transform 600ms cubic-bezier(0.16, 1, 0.3, 1)' : 'transform 100ms ease-out',
+                transformStyle: 'preserve-3d',
+              }}
+              className="animate-levitate group relative rounded-2xl border border-[#34312B] bg-[#161514] p-3 sm:p-3.5 shadow-2xl transition-all duration-500 hover:border-[#C6A76A] hover:shadow-[0_0_45px_rgba(198,167,106,0.22)]"
+            >
               {/* Image Frame matching exact 1376x768 (1.79:1) ratio with zero cropping */}
               <div
                 className="relative w-full overflow-hidden rounded-xl bg-[#0d0d0c]"
@@ -94,14 +145,23 @@ export function HeroSection() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
+
+                {/* Animated Specular Light Sweep Sheen */}
+                <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
+                  <div className="animate-light-sweep absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+                </div>
               </div>
 
               {/* Signature Release Footer Strip - Cleanly positioned below image without obscuring text */}
-              <div className="mt-3 px-4 py-3 rounded-xl border border-[#2B2823] bg-[#11100F] flex items-center justify-between">
+              <div className="mt-3 px-4 py-3 rounded-xl border border-[#2B2823] bg-[#11100F] flex items-center justify-between transition-colors duration-300 group-hover:border-[#3D3830]">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-[#C6A76A]">
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-[#C6A76A] flex items-center gap-1.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6A76A] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C6A76A]"></span>
+                    </span>
                     Signature Release
                   </p>
                   <p className="font-serif text-sm sm:text-base font-light text-[#F5F0E8] mt-0.5">
@@ -110,7 +170,7 @@ export function HeroSection() {
                 </div>
                 <Link
                   href="/categories/electronics"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-[#C6A76A]/40 bg-[#C6A76A]/10 px-4 py-1.5 text-[11px] font-sans font-medium uppercase tracking-wider text-[#C6A76A] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#C6A76A]/50 bg-[#C6A76A]/10 px-4 py-1.5 text-[11px] font-sans font-medium uppercase tracking-wider text-[#C6A76A] hover:bg-[#C6A76A] hover:text-[#101010] hover:shadow-[0_0_15px_rgba(198,167,106,0.5)] transition-all duration-300"
                 >
                   <span>View</span>
                   <span>&rarr;</span>

@@ -53,7 +53,13 @@ export function ProductInfo({ product }: ProductInfoProps) {
           {product.newArrival && <Badge variant="accent">New Arrival</Badge>}
           {product.bestSeller && <Badge variant="default">Best Seller</Badge>}
           {product.availability === 'in-stock' && (
-            <Badge variant="success">In Stock</Badge>
+            <Badge variant="success" className="inline-flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              In Stock
+            </Badge>
           )}
           {product.availability === 'pre-order' && (
             <Badge variant="warning">Pre-Order</Badge>
@@ -153,6 +159,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           size="lg"
           fullWidth
           label="Inquire Availability via Concierge"
+          className="shadow-[0_0_20px_rgba(198,167,106,0.25)] hover:shadow-[0_0_35px_rgba(198,167,106,0.5)] hover:scale-[1.01] transition-all"
         />
         <p className="text-center font-sans text-[11px] text-[#A69F93]">
           Direct concierge assistance for stock confirmation, bespoke inquiry, and express courier dispatch.

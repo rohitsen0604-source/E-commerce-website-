@@ -75,6 +75,7 @@ export function ProductCatalogClient({
           </Button>
 
           <span className="font-sans text-xs text-[#A69F93]">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#C6A76A] animate-ping mr-1.5 align-middle" />
             Curated archive: <strong className="text-[#F5F0E8] font-medium">{totalCount}</strong> masterpieces
           </span>
 

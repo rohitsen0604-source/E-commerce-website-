@@ -57,6 +57,62 @@ export const categories: Category[] = [
       metaDescription: 'Discover full-grain leather bags, polarized titanium eyewear, and automatic chronographs.',
     },
   },
+  {
+    id: 'cat-jewellery',
+    name: 'Jewellery',
+    slug: 'jewellery',
+    description: 'Handcrafted 18k solid gold adornments, bespoke gemstone pendants, and timeless artisanal heirloom treasures.',
+    image: '/images/categories/jewellery.jpg',
+    parentCategoryId: null,
+    featured: true,
+    productCount: 6,
+    seo: {
+      metaTitle: 'Luxury Jewellery Collection | Fine Ornaments',
+      metaDescription: 'Explore our exquisite jewellery collection crafted with precious metals and timeless elegance.',
+    },
+  },
+  {
+    id: 'cat-musical-instruments',
+    name: 'Musical Instruments',
+    slug: 'musical-instruments',
+    description: 'Acoustic guitars, orchestral instruments, professional studio gear, and precision sound artifacts.',
+    image: '/images/categories/musical-instruments.jpg',
+    parentCategoryId: null,
+    featured: true,
+    productCount: 6,
+    seo: {
+      metaTitle: 'Mastercrafted Musical Instruments | Aura Atelier',
+      metaDescription: 'Explore handcrafted acoustic guitars, studio instruments, and orchestral sound gear designed for artistic expression.',
+    },
+  },
+  {
+    id: 'cat-toys',
+    name: 'Toys',
+    slug: 'toys',
+    description: 'Educational playsets, creative building toys, Montessori learning artifacts, and imaginative play collections.',
+    image: '/images/categories/toys-v2.jpg',
+    parentCategoryId: null,
+    featured: true,
+    productCount: 6,
+    seo: {
+      metaTitle: 'Creative Toys & Educational Playsets | Aura Atelier',
+      metaDescription: 'Discover handcrafted wooden toys, Montessori educational sets, and premium creative toys for kids.',
+    },
+  },
+  {
+    id: 'cat-baby-items',
+    name: 'Baby Items',
+    slug: 'baby-items',
+    description: 'Organic baby essentials, gentle nursery decor, premium feeding accessories, and newborn care collections.',
+    image: '/images/categories/baby-items-v2.jpg',
+    parentCategoryId: null,
+    featured: true,
+    productCount: 6,
+    seo: {
+      metaTitle: 'Premium Baby Essentials & Newborn Care | Aura Atelier',
+      metaDescription: 'Shop organic cotton baby essentials, soothing nursery products, and curated infant care artifacts.',
+    },
+  },
 ];
 
 export function getAllCategories(): Category[] {

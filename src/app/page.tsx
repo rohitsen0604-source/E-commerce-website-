@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
+import { LuxuryMarquee } from '@/components/home/LuxuryMarquee';
 import { FeaturedCategories } from '@/components/home/FeaturedCategories';
 import { FeaturedProducts } from '@/components/home/FeaturedProducts';
 import { NewArrivals } from '@/components/home/NewArrivals';
@@ -14,7 +15,10 @@ export default function HomePage() {
       {/* 1. Hero Showcase Section */}
       <HeroSection />
 
-      {/* 2. Featured Category Grid */}
+      {/* 2. Prestige Luxury Marquee Ribbon */}
+      <LuxuryMarquee />
+
+      {/* 3. Featured Category Grid */}
       <FeaturedCategories />
 
       {/* 3. Featured Products Grid */}

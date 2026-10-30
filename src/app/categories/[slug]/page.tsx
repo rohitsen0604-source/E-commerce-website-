@@ -10,6 +10,7 @@ import { Breadcrumb } from '@/components/shared/Breadcrumb';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { ProductCatalogClient } from '@/components/products/ProductCatalogClient';
 import { PageLoader } from '@/components/shared/PageLoader';
+import { ScrollReveal } from '@/components/shared/ScrollReveal';
 
 interface CategoryDetailPageProps {
   params: Promise<{
@@ -66,14 +67,16 @@ export default async function CategoryDetailPage({ params }: CategoryDetailPageP
         />
 
         <div className="pt-4 pb-14">
-          <SectionHeading
-            badge="Collection Focus"
-            title={category.name}
-            description={category.description}
-            alignment="left"
-            theme="dark"
-            className="mb-10"
-          />
+          <ScrollReveal direction="up" delayMs={0}>
+            <SectionHeading
+              badge="Collection Focus"
+              title={category.name}
+              description={category.description}
+              alignment="left"
+              theme="dark"
+              className="mb-10"
+            />
+          </ScrollReveal>
 
           <Suspense fallback={<PageLoader label="Loading category products..." />}>
             <ProductCatalogClient
