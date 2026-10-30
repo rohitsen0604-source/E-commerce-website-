@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <defs>
+    <radialGradient id="hero_glow" cx="70%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#C6A76A" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#1C1B19" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#101010"/>
+    </radialGradient>
+    <linearGradient id="gold_stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DDC8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#C6A76A" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="#101010"/>
+  <rect width="1200" height="600" fill="url(#hero_glow)"/>
+  
+  <rect x="40" y="40" width="1120" height="520" fill="none" stroke="#262420" stroke-width="1"/>
+  <circle cx="880" cy="300" r="170" stroke="url(#gold_stroke)" stroke-width="1.25" fill="none"/>
+  <circle cx="880" cy="300" r="140" stroke="#34312B" stroke-width="0.75" stroke-dasharray="4 4" fill="none"/>
+  <circle cx="880" cy="300" r="100" fill="#161513" stroke="#C6A76A" stroke-width="0.5"/>
+  <text x="880" y="325" font-size="70" text-anchor="middle">✨</text>
+  <text x="880" y="470" font-family="'Cormorant Garamond', Georgia, serif" font-size="20" font-style="italic" fill="#E8DDC8" text-anchor="middle" letter-spacing="2">The Obsidian Edition</text>
+</svg>

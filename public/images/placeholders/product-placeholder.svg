@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#161514"/>
+  <rect x="180" y="180" width="240" height="240" rx="4" fill="#1C1B19" stroke="#34312B" stroke-width="1.5"/>
+  <circle cx="300" cy="280" r="50" stroke="#C6A76A" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+  <text x="300" y="286" font-family="'Cormorant Garamond', serif" font-size="28" font-style="italic" fill="#C6A76A" text-anchor="middle">Aura</text>
+  <text x="300" y="370" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="#8C8275" text-anchor="middle">PRODUCT ATELIER</text>
+</svg>

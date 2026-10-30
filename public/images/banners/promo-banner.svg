@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" fill="none">
+  <rect width="1200" height="400" fill="#141312"/>
+  <rect x="30" y="30" width="1140" height="340" fill="none" stroke="#34312B" stroke-width="1"/>
+  <circle cx="1020" cy="200" r="110" fill="#1C1B19" stroke="#C6A76A" stroke-width="1"/>
+  <text x="1020" y="222" font-size="60" text-anchor="middle">⚜️</text>
+</svg>

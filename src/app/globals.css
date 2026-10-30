@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "../styles/animations.css";
+
+:root {
+  /* Ultra-Premium Obsidian & Champagne Tokens */
+  --bg-primary: #101010;
+  --bg-secondary: #1C1B19;
+  --bg-light: #F5F1E9;
+  --bg-card: #FFFFFF;
+  
+  --text-primary: #F5F0E8;
+  --text-dark: #121110;
+  --text-muted: #8C8275;
+  --text-muted-dark: #A69D8F;
+  
+  --accent: #C6A76A;
+  --accent-secondary: #E8DDC8;
+  --accent-hover: #B59556;
+  
+  --border-dark: #34312B;
+  --border-light: #E3DDD3;
+  --border-accent: rgba(198, 167, 106, 0.35);
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-manrope), "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@theme inline {
+  --color-obsidian: #101010;
+  --color-charcoal: #1C1B19;
+  --color-ivory: #F5F1E9;
+  --color-champagne: #C6A76A;
+  --color-champagne-light: #E8DDC8;
+  --color-champagne-dark: #B59556;
+  --color-border-dark: #34312B;
+  --color-border-light: #E3DDD3;
+  --color-text-light: #F5F0E8;
+  --color-text-dark: #121110;
+  --color-text-muted: #8C8275;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Luxury Editorial touches */
+.editorial-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.editorial-tag {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Obsidian Glass Panels */
+.obsidian-glass {
+  background: rgba(16, 16, 16, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.obsidian-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-dark);
+}
+
+.ivory-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+}
+
+.champagne-border {
+  border-color: rgba(198, 167, 106, 0.4);
+}
