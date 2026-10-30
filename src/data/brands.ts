@@ -3,42 +3,42 @@ import { Brand } from '@/types/brand';
 export const brands: Brand[] = [
   {
     id: 'brand-1',
-    name: 'Veloce Acoustics',
-    slug: 'veloce-acoustics',
-    description: 'Precision acoustic engineering and high-fidelity sound equipment.',
-    logo: '/images/brands/brand-1.svg',
+    name: 'Sony',
+    slug: 'sony',
+    description: 'World-renowned audio engineering, flagship noise-cancelling headphones, and premium electronics.',
+    logo: '/images/brands/sony.svg',
     featured: true,
   },
   {
     id: 'brand-2',
-    name: 'Aethel Atelier',
-    slug: 'aethel-atelier',
-    description: 'Tailored luxury garments crafted with organic fibers and timeless silhouettes.',
-    logo: '/images/brands/brand-2.svg',
+    name: 'Red Chief',
+    slug: 'red-chief',
+    description: 'Iconic genuine full-grain leather bags, rugged travel accessories, and lifestyle essentials.',
+    logo: '/images/brands/redchief.svg',
     featured: true,
   },
   {
     id: 'brand-3',
-    name: 'Nordik Living',
-    slug: 'nordik-living',
-    description: 'Minimalist Scandinavian home decor, functional lighting, and furniture.',
-    logo: '/images/brands/brand-3.svg',
+    name: 'boAt',
+    slug: 'boat',
+    description: "India's leading lifestyle audio brand delivering signature sound, smart wearables, and acoustics.",
+    logo: '/images/brands/boat.svg',
     featured: true,
   },
   {
     id: 'brand-4',
-    name: 'Komorebi Crafts',
-    slug: 'komorebi-crafts',
-    description: 'Artisanal ceramics and handcrafted daily lifestyle objects.',
-    logo: '/images/brands/brand-4.svg',
+    name: 'Adidas',
+    slug: 'adidas',
+    description: 'Global iconic sportswear and apparel brand delivering modern style, comfort, and premium knitwear.',
+    logo: '/images/brands/adidas.svg',
     featured: true,
   },
   {
     id: 'brand-5',
-    name: 'Chronos Horology',
-    slug: 'chronos-horology',
-    description: 'Precision mechanical timepieces and minimalist wrist instruments.',
-    logo: '/images/brands/brand-5.svg',
+    name: 'Titan',
+    slug: 'titan',
+    description: "India's celebrated premier watchmaker, synonymous with precision horology and timeless craftsmanship.",
+    logo: '/images/brands/titan.svg',
     featured: true,
   },
 ];
@@ -49,4 +49,8 @@ export function getBrandById(id: string): Brand | undefined {
 
 export function getAllBrands(): Brand[] {
   return brands;
+}
+
+export function getFeaturedBrands(): Brand[] {
+  return brands.filter((b) => b.featured);
 }

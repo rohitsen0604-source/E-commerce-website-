@@ -2,7 +2,7 @@
 @import "../styles/animations.css";
 
 :root {
-  /* Ultra-Premium Obsidian & Champagne Tokens */
+  /* Ultra-Premium Obsidian & Champagne Tokens - Theme Preserved */
   --bg-primary: #101010;
   --bg-secondary: #1C1B19;
   --bg-light: #F5F1E9;
@@ -21,8 +21,11 @@
   --border-light: #E3DDD3;
   --border-accent: rgba(198, 167, 106, 0.35);
 
-  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-manrope), "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Same clean modern font as "EXPLORE COLLECTION" (Manrope) for the whole website */
+  --font-manrope-family: var(--font-manrope), "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-manrope-family);
+  --font-serif: var(--font-manrope-family);
+  --font-heading: var(--font-manrope-family);
 }
 
 @theme inline {
@@ -38,8 +41,8 @@
   --color-text-dark: #121110;
   --color-text-muted: #8C8275;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-serif: var(--font-manrope-family);
+  --font-sans: var(--font-manrope-family);
 }
 
 @layer base {
@@ -47,28 +50,27 @@
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-sans);
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: var(--font-serif);
-    letter-spacing: 0.01em;
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+    font-weight: 500;
   }
 }
 
-/* Luxury Editorial touches */
 .editorial-serif {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .editorial-tag {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
 }

@@ -42,7 +42,7 @@ export default function TermsAndConditionsPage() {
                 2. Phase 1 Static Showcase Scope
               </h2>
               <p>
-                This digital platform serves exclusively as an informational static product showcase and curated aesthetic catalog (Phase 1). No automated retail transactions, order checkout, or payment gateway executions are processed directly through this website. All price quotes, inventory confirmations, and commercial transactions occur off-site via authorized concierge channels.
+                This digital platform serves exclusively as an informational static product showcase and curated aesthetic catalog (Phase 1). No automated retail transactions, order checkout, or payment gateway executions are processed directly through this website. All price quotes, inventory confirmations, and commercial transactions occur off-site via authorized WhatsApp support and customer care channels.
               </p>
             </section>
 
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
                 4. Pricing & Product Accuracy
               </h2>
               <p>
-                While we exercise meticulous care to maintain accurate product descriptions, material specifications, and indicative pricing, occasional typographical anomalies or production updates may occur. Confirmed pricing and availability are verified upon consultation with our concierge team.
+                While we exercise meticulous care to maintain accurate product descriptions, material specifications, and indicative pricing, occasional typographical anomalies or production updates may occur. Confirmed pricing and availability are verified upon consultation with our customer support team.
               </p>
             </section>
           </div>

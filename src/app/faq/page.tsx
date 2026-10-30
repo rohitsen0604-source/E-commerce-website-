@@ -10,7 +10,7 @@ import { Button } from '@/components/shared/Button';
 export const metadata: Metadata = constructMetadata({
   title: 'Frequently Asked Questions (FAQ)',
   description:
-    'Answers to common inquiries regarding ordering through our Phase 1 concierge, international shipping, warranty, and authentication.',
+    'Answers to common inquiries regarding ordering through our direct WhatsApp support, shipping across India, warranty, and authentication.',
   canonicalUrl: '/faq',
 });
 
@@ -24,7 +24,7 @@ export default function FAQPage() {
           <SectionHeading
             badge="Client Assistance"
             title="Frequently Asked Questions"
-            description="Clear guidance on our Phase 1 static catalog showcase, acquiring artifacts through our concierge, and lifetime authenticity guarantees."
+            description="Clear guidance on exploring our catalog, acquiring items through our support team, and authentic warranty guarantees."
             alignment="left"
             theme="dark"
             className="mb-10"
@@ -54,11 +54,11 @@ export default function FAQPage() {
               Have a question not addressed here?
             </h3>
             <p className="mt-2 font-sans text-xs sm:text-sm text-[#A69F93] max-w-sm mx-auto leading-relaxed font-light">
-              Our concierge team is available to assist you with specific questions regarding materials, provenance, or custom dispatch.
+              Our support team is available to assist you with specific questions regarding materials, provenance, or custom dispatch.
             </p>
             <div className="mt-6 flex justify-center gap-4">
               <Button href="/contact" variant="accent" size="sm">
-                Contact Concierge
+                Contact Support
               </Button>
             </div>
           </div>

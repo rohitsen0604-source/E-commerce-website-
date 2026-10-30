@@ -82,7 +82,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           {product.rating.toFixed(1)}
         </span>
         <span className="text-xs text-[#A69F93]">
-          ({product.reviewCount} connoisseur reviews)
+          ({product.reviewCount} customer reviews)
         </span>
       </div>
 
@@ -99,26 +99,24 @@ export function ProductInfo({ product }: ProductInfoProps) {
           </span>
         )}
         {product.discountPercentage ? (
-          <span className="rounded-full border border-[#C6A76A]/40 bg-[#C6A76A]/10 px-2.5 py-0.5 text-xs font-sans text-[#C6A76A]">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#C6A76A] bg-[#C6A76A]/10 px-2 py-0.5 border border-[#C6A76A]/30">
             Save {product.discountPercentage}%
           </span>
         ) : null}
       </div>
 
       {/* Description */}
-      <p className="font-sans text-sm leading-relaxed text-[#D8D2C7] font-light">
+      <p className="font-sans text-sm sm:text-base leading-relaxed text-[#D8D2C7] font-light">
         {product.description}
       </p>
 
-      {/* Variants (if any) */}
+      {/* Variants (Color / Edition / Size) */}
       {product.variants.length > 0 && (
         <div className="space-y-3 pt-2">
-          <div className="flex items-center justify-between text-xs font-medium text-[#D8D2C7]">
-            <span>Select Specification:</span>
-            <span className="font-semibold text-[#F5F0E8]">
-              {selectedVariant?.name}
-            </span>
-          </div>
+          <label className="block text-xs font-medium uppercase tracking-wider text-[#A69F93]">
+            Select {product.variants[0]?.type || 'Option'}:{' '}
+            <span className="text-[#F5F0E8] font-semibold">{selectedVariant?.name}</span>
+          </label>
           <div className="flex flex-wrap gap-2.5">
             {product.variants.map((v) => {
               const isSelected = selectedVariant?.id === v.id;
@@ -128,15 +126,15 @@ export function ProductInfo({ product }: ProductInfoProps) {
                   type="button"
                   onClick={() => setSelectedVariant(v)}
                   disabled={!v.inStock}
-                  className={`rounded-lg border px-4 py-2 text-xs font-medium transition-all duration-200 ${
+                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 border ${
                     isSelected
-                      ? 'border-[#C6A76A] bg-[#C6A76A] text-[#101010]'
+                      ? 'border-[#C6A76A] bg-[#C6A76A] text-[#101010] font-semibold shadow-md'
                       : v.inStock
-                      ? 'border-[#34312B] bg-[#161514] text-[#F5F0E8] hover:border-[#C6A76A]/60'
-                      : 'border-[#24221E] bg-[#121110] text-[#736E65] line-through cursor-not-allowed'
+                      ? 'border-[#34312B] bg-[#161514] text-[#F5F0E8] hover:border-[#C6A76A]'
+                      : 'border-[#24221E] bg-[#161514]/50 text-[#827C72] cursor-not-allowed line-through'
                   }`}
                 >
-                  {v.name}
+                  {v.value}
                   {!v.inStock && ' (Unavailable)'}
                 </button>
               );
@@ -145,24 +143,24 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </div>
       )}
 
-      {/* WhatsApp Concierge Action CTA */}
+      {/* WhatsApp Order CTA Button */}
       <div className="space-y-3 pt-4">
         <WhatsAppButton
           productName={`${product.name} ${selectedVariant ? `(${selectedVariant.name})` : ''}`}
           productSlug={product.slug}
           size="lg"
           fullWidth
-          label="Inquire Availability via Concierge"
+          label="Order on WhatsApp"
         />
-        <p className="text-center font-sans text-[11px] text-[#A69F93]">
-          Direct concierge assistance for stock confirmation, bespoke inquiry, and express courier dispatch.
+        <p className="text-center font-sans text-xs text-[#A69F93]">
+          Chat directly with us on WhatsApp to place your order with free delivery across India.
         </p>
       </div>
 
       {/* Key Highlights list */}
       <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-6">
         <h4 className="text-xs font-semibold uppercase tracking-wider text-[#F5F0E8] mb-3.5">
-          Artisanal Highlights
+          Key Highlights
         </h4>
         <ul className="space-y-2.5 text-xs text-[#D8D2C7] font-light">
           {product.features.map((feat, i) => (
@@ -179,29 +177,29 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <ShieldCheck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
-            <p className="font-medium text-[#F5F0E8]">Authenticity</p>
-            <p className="text-[10px] text-[#A69F93]">100% Certified Genuine</p>
+            <p className="font-medium text-[#F5F0E8]">100% Genuine</p>
+            <p className="text-[10px] text-[#A69F93]">Certified Authentic</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <Truck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
-            <p className="font-medium text-[#F5F0E8]">Global Express</p>
-            <p className="text-[10px] text-[#A69F93]">Insured Courier</p>
+            <p className="font-medium text-[#F5F0E8]">Fast Delivery</p>
+            <p className="text-[10px] text-[#A69F93]">Express Across India</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <RotateCcw className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">14-Day Returns</p>
-            <p className="text-[10px] text-[#A69F93]">Vault Condition</p>
+            <p className="text-[10px] text-[#A69F93]">Easy Return Policy</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <Clock className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">2-Year Warranty</p>
-            <p className="text-[10px] text-[#A69F93]">Maison Guarantee</p>
+            <p className="text-[10px] text-[#A69F93]">Full Brand Coverage</p>
           </div>
         </div>
       </div>

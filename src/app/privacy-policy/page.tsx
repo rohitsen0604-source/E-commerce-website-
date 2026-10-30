@@ -42,11 +42,11 @@ export default function PrivacyPolicyPage() {
                 2. Information We Collect
               </h2>
               <p>
-                During Phase 1, our website operates primarily as a static showcase. We only collect information that you voluntarily transmit to our concierge team:
+                During Phase 1, our website operates primarily as a static showcase. We only collect information that you voluntarily transmit to our customer support team:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-[#D8D2C7]">
                 <li>Contact details transmitted via our inquiry form (name, email, phone number).</li>
-                <li>Inquiry history and product specifications sent to our WhatsApp concierge.</li>
+                <li>Inquiry history and product specifications sent to our WhatsApp support channel.</li>
                 <li>Standard anonymous technical server logs (browser user-agent, referrers, and diagnostic telemetry).</li>
               </ul>
             </section>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
                 We utilize collected information solely to:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-[#D8D2C7]">
-                <li>Respond directly to your product inquiries, availability checks, and concierge requests.</li>
+                <li>Respond directly to your product inquiries, availability checks, and support requests.</li>
                 <li>Coordinate personalized quotes and private showroom consultations.</li>
                 <li>Maintain the operational stability, performance, and security of our digital catalog.</li>
               </ul>

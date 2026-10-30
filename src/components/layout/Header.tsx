@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, MessageCircle } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { contactConfig } from '@/config/contact';
-import { buildWhatsAppLink } from '@/lib/utils';
+import { buildWhatsAppLink, cn } from '@/lib/utils';
 import { Container } from './Container';
 import { Navigation } from './Navigation';
 import { MobileNavigation } from './MobileNavigation';
@@ -16,6 +16,32 @@ import { Logo } from '@/components/shared/Logo';
 
 export function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Always show when near top of the page
+      if (currentScrollY <= 40) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling down -> hide navbar
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up -> show navbar
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const showNavbar = isVisible || mobileNavOpen;
 
   const whatsappHref = buildWhatsAppLink(
     contactConfig.whatsappNumber,
@@ -23,7 +49,12 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-40 w-full transition-all duration-300">
+    <header
+      className={cn(
+        'sticky top-0 z-40 w-full transition-transform duration-300 ease-in-out',
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      )}
+    >
       {/* Top Announcement Bar */}
       <AnnouncementBar />
 
@@ -46,16 +77,16 @@ export function Header() {
                 <ProductSearch variant="header" />
               </div>
 
-              {/* WhatsApp Concierge Quick Trigger */}
+              {/* WhatsApp Support Quick Trigger */}
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Inquire via WhatsApp Concierge"
+                title="Contact via WhatsApp Support"
                 className="hidden lg:inline-flex items-center gap-2 border border-[#C6A76A] bg-[#141312] px-4 py-2 text-[10px] tracking-[0.2em] uppercase font-medium text-[#E8DDC8] hover:bg-[#C6A76A] hover:text-[#101010] transition-all duration-300"
               >
                 <MessageCircle className="h-3.5 w-3.5 text-[#C6A76A]" />
-                <span>Concierge</span>
+                <span>WhatsApp Support</span>
               </a>
 
               {/* Mobile Menu Button */}

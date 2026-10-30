@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
-    <text x="100" y="42" font-family="'Cormorant Garamond', Georgia, serif" font-size="21" font-weight="600" fill="#E8DDC8" text-anchor="middle" letter-spacing="4">CHRONOS</text>
-    <text x="100" y="60" font-family="'Manrope', sans-serif" font-size="9" font-weight="600" fill="#8C8275" text-anchor="middle" letter-spacing="3">GENÈVE</text>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none">
+  <!-- Titan Stylized T in Circle -->
+  <g transform="translate(120, 26)">
+    <circle cx="0" cy="0" r="14" stroke="#121110" stroke-width="2.5" fill="none"/>
+    <path d="M-8 -6 L8 -6 M0 -6 L0 8" stroke="#121110" stroke-width="2.5" stroke-linecap="square"/>
+    <circle cx="0" cy="-6" r="2.5" fill="#C6A76A"/>
+  </g>
+  <!-- TITAN Wordmark -->
+  <text x="120" y="66" font-family="'Manrope', sans-serif" font-size="26" font-weight="800" fill="#121110" text-anchor="middle" letter-spacing="6">TITAN</text>
+  <text x="120" y="80" font-family="'Manrope', sans-serif" font-size="7.5" font-weight="700" fill="#A8823E" text-anchor="middle" letter-spacing="3">WATCHES &amp; ACCESSORIES</text>
+</svg>

@@ -1,23 +1,16 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Manrope } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { constructMetadata } from '@/lib/metadata';
 import { generateOrganizationJsonLd } from '@/lib/seo';
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-cormorant',
-  weight: ['300', '400', '500', '600', '700'],
-});
-
 const manrope = Manrope({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-manrope',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = constructMetadata();
@@ -37,7 +30,7 @@ export default function RootLayout({
   const orgJsonLd = generateOrganizationJsonLd();
 
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
+    <html lang="en" className={manrope.variable}>
       <head>
         <script
           type="application/ld+json"

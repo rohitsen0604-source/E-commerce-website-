@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <g transform="translate(100, 18)">
+    <path d="M-22 -3 L-11 -9 L0 -3 L11 -9 L22 -3 L16 5 L-16 5 Z" fill="#C5221F"/>
+    <path d="M-9 6 L9 6 L0 12 Z" fill="#C5221F"/>
+  </g>
+  <text x="100" y="52" font-family="'Manrope', sans-serif" font-size="20" font-weight="900" fill="#C5221F" text-anchor="middle" letter-spacing="2">RED CHIEF</text>
+  <text x="100" y="66" font-family="'Manrope', sans-serif" font-size="7" font-weight="700" fill="#121110" text-anchor="middle" letter-spacing="3">GENUINE LEATHER</text>
+</svg>
+

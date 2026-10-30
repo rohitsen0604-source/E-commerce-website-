@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
-    <text x="100" y="42" font-family="'Cormorant Garamond', Georgia, serif" font-size="21" font-weight="600" fill="#E8DDC8" text-anchor="middle" letter-spacing="4">AETHEL</text>
-    <text x="100" y="60" font-family="'Manrope', sans-serif" font-size="9" font-weight="600" fill="#8C8275" text-anchor="middle" letter-spacing="3">ATELIER</text>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none">
+  <!-- Red Chief Emblem -->
+  <g transform="translate(120, 24)">
+    <path d="M-28 -4 L-14 -12 L0 -4 L14 -12 L28 -4 L20 6 L-20 6 Z" fill="#C5221F"/>
+    <path d="M-12 8 L12 8 L0 16 Z" fill="#C5221F"/>
+  </g>
+  <!-- RED CHIEF wordmark -->
+  <text x="120" y="64" font-family="'Manrope', sans-serif" font-size="24" font-weight="900" fill="#C5221F" text-anchor="middle" letter-spacing="3">RED CHIEF</text>
+  <text x="120" y="80" font-family="'Manrope', sans-serif" font-size="8" font-weight="700" fill="#121110" text-anchor="middle" letter-spacing="4">GENUINE LEATHER</text>
+</svg>

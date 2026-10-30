@@ -59,7 +59,7 @@ export function HeroSection() {
                 size="lg"
                 leftIcon={<MessageCircle className="h-3.5 w-3.5 text-[#C6A76A]" />}
               >
-                Private Concierge
+                WhatsApp Support
               </Button>
             </div>
 
