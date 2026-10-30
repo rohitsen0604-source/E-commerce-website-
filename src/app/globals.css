@@ -7,16 +7,16 @@
   --bg-secondary: #1C1B19;
   --bg-light: #F5F1E9;
   --bg-card: #FFFFFF;
-  
+
   --text-primary: #F5F0E8;
   --text-dark: #121110;
   --text-muted: #8C8275;
   --text-muted-dark: #A69D8F;
-  
+
   --accent: #C6A76A;
   --accent-secondary: #E8DDC8;
   --accent-hover: #B59556;
-  
+
   --border-dark: #34312B;
   --border-light: #E3DDD3;
   --border-accent: rgba(198, 167, 106, 0.35);
@@ -43,6 +43,7 @@
 }
 
 @layer base {
+
   html,
   body {
     background-color: var(--bg-primary);
@@ -61,7 +62,10 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  h1, h2, h3, .font-serif {
+  h1,
+  h2,
+  h3,
+  .font-serif {
     font-family: var(--font-serif);
     letter-spacing: 0.01em;
   }

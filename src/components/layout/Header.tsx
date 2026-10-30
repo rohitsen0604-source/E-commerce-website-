@@ -102,6 +102,8 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleOpenMobileNav}
+                aria-expanded={mobileNavOpen}
+                aria-controls="mobile-navigation-drawer"
                 className="inline-flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#34312B] bg-[#141312] text-[#E8DDC8] hover:text-[#C6A76A] hover:border-[#C6A76A] transition-colors cursor-pointer select-none"
                 aria-label="Open mobile menu"
               >
