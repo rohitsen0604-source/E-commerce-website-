@@ -34,9 +34,9 @@ export function ProductFilters({
 }: ProductFiltersProps) {
   const priceRanges = [
     { label: 'All Prices', min: undefined, max: undefined },
-    { label: 'Under $200', min: 0, max: 200 },
-    { label: '$200 – $400', min: 200, max: 400 },
-    { label: 'Over $400', min: 400, max: undefined },
+    { label: 'Under ₹300', min: 0, max: 300 },
+    { label: '₹300 – ₹500', min: 300, max: 500 },
+    { label: 'Over ₹500', min: 500, max: undefined },
   ];
 
   return (

@@ -6,13 +6,13 @@ export const siteConfig = {
   ogImage: '/images/banners/hero-banner.svg',
   logo: '/images/logos/logo.svg',
   currency: {
-    code: 'USD',
-    symbol: '$',
-    locale: 'en-US',
+    code: 'INR',
+    symbol: '₹',
+    locale: 'en-IN',
   },
   announcement: {
     enabled: true,
-    text: 'Complimentary worldwide express shipping on orders over $150 — Discover our 2026 Collection',
+    text: 'Complimentary express shipping across India on orders over ₹499 — Festive Collection 2026',
     link: '/products',
   },
   navLinks: [
