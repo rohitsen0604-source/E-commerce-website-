@@ -63,11 +63,11 @@ export default function FAQPage() {
                 Have a question not addressed here?
               </h3>
               <p className="mt-2 font-sans text-xs sm:text-sm text-[#A69F93] max-w-sm mx-auto leading-relaxed font-light">
-                Our concierge team is available to assist you with specific questions regarding materials, provenance, or custom dispatch.
+                Our customer support team is available to assist you with specific questions regarding materials, delivery across India, or warranty.
               </p>
               <div className="mt-6 flex justify-center gap-4">
                 <Button href="/contact" variant="accent" size="sm">
-                  Contact Concierge
+                  Contact Support
                 </Button>
               </div>
             </div>

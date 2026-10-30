@@ -108,7 +108,7 @@ export default function AboutPage() {
               Discover the Studio Pieces
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#D8D2C7] font-light max-w-md mx-auto leading-relaxed">
-              Experience our meticulously curated products firsthand with personalized concierge support.
+              Experience our meticulously curated products firsthand with direct WhatsApp support.
             </p>
             <div className="pt-2">
               <Button

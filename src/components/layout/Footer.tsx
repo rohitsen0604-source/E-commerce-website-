@@ -81,7 +81,7 @@ export function Footer() {
             {/* Column 4: Concierge & Contact */}
             <div className="space-y-4">
               <h3 className="editorial-tag text-[#F5F0E8] mb-5">
-                Private Concierge
+                Customer Support
               </h3>
               <ul className="space-y-3.5 text-xs text-[#8C8275] font-light leading-relaxed">
                 <li className="flex items-start gap-2.5">

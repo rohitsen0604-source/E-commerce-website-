@@ -62,7 +62,7 @@ export default function ReturnPolicyPage() {
                   2. Return Authorization Procedure
                 </h2>
                 <ol className="list-decimal pl-5 space-y-1.5 text-[#D8D2C7]">
-                  <li>Notify our concierge via WhatsApp or email at <a href={`mailto:${contactConfig.supportEmail}`} className="text-[#C6A76A] hover:underline">{contactConfig.supportEmail}</a> within 14 calendar days of delivery.</li>
+                  <li>Notify our support team via WhatsApp or email at <a href={`mailto:${contactConfig.supportEmail}`} className="text-[#C6A76A] hover:underline">{contactConfig.supportEmail}</a> within 14 calendar days of delivery.</li>
                   <li>Our team will issue an insured return shipping label and provide customs clearance guidance.</li>
                   <li>Package the item securely in its original packaging with all included documentation.</li>
                   <li>Hand the package to the designated courier or drop off at an authorized carrier station.</li>

@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
-    <text x="100" y="42" font-family="'Cormorant Garamond', Georgia, serif" font-size="21" font-weight="600" fill="#E8DDC8" text-anchor="middle" letter-spacing="4">KOMOREBI</text>
-    <text x="100" y="60" font-family="'Manrope', sans-serif" font-size="9" font-weight="600" fill="#8C8275" text-anchor="middle" letter-spacing="3">STUDIO</text>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none">
+  <!-- Adidas 3-Bars -->
+  <g transform="translate(120, 32) scale(0.9)">
+    <!-- Stripe 1 (Smallest, Left) -->
+    <polygon points="-40,10 -40,-2 -22,-12 -22,0" fill="#121110" />
+    <!-- Stripe 2 (Medium, Middle) -->
+    <polygon points="-14,10 -14,-18 4,-28 4,0" fill="#121110" />
+    <!-- Stripe 3 (Tallest, Right) -->
+    <polygon points="12,10 12,-34 30,-44 30,0" fill="#121110" />
+  </g>
+  <!-- adidas Wordmark -->
+  <text x="120" y="74" font-family="'Manrope', 'Century Gothic', sans-serif" font-size="28" font-weight="800" fill="#121110" text-anchor="middle" letter-spacing="1">adidas</text>
+</svg>

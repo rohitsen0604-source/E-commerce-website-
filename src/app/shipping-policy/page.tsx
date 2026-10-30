@@ -32,7 +32,7 @@ export default function ShippingPolicyPage() {
               <div className="group rounded-2xl border border-[#34312B] bg-[#161514] p-6 text-[#F5F0E8] transition-all duration-300 hover:border-[#C6A76A]/60 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,167,106,0.10)]">
                 <Truck className="h-5 w-5 text-[#C6A76A] mb-3 transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="font-serif text-base font-light text-[#F5F0E8]">Complimentary Courier</h3>
-                <p className="font-sans text-xs text-[#A69F93] mt-1 font-light">Available on all concierge orders exceeding $150 USD.</p>
+                <p className="font-sans text-xs text-[#A69F93] mt-1 font-light">Available on all orders exceeding ₹4,999.</p>
               </div>
               <div className="group rounded-2xl border border-[#34312B] bg-[#161514] p-6 text-[#F5F0E8] transition-all duration-300 hover:border-[#C6A76A]/60 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(198,167,106,0.10)]">
                 <Globe className="h-5 w-5 text-[#C6A76A] mb-3 transition-transform duration-300 group-hover:scale-110" />
@@ -58,9 +58,9 @@ export default function ShippingPolicyPage() {
                   2. Estimated Transit Times
                 </h2>
                 <ul className="list-disc pl-5 space-y-1.5 text-[#D8D2C7]">
-                  <li><strong>Domestic Expedited (United States):</strong> 2 to 4 business days.</li>
-                  <li><strong>International Priority (Europe & UK):</strong> 3 to 5 business days.</li>
-                  <li><strong>International Priority (Asia-Pacific & Middle East):</strong> 4 to 7 business days.</li>
+                  <li><strong>Domestic Metro Express (Delhi NCR, Mumbai, Bengaluru, Hyderabad):</strong> 2 to 3 business days.</li>
+                  <li><strong>Domestic Standard (Rest of India):</strong> 3 to 5 business days.</li>
+                  <li><strong>International Priority:</strong> 5 to 8 business days.</li>
                 </ul>
               </section>
 
@@ -78,7 +78,7 @@ export default function ShippingPolicyPage() {
                   4. Customs Duties & Import Taxes
                 </h2>
                 <p>
-                  For international shipments, import tariffs or customs clearance charges are determined by destination border authorities and are the responsibility of the recipient unless otherwise specified in your concierge quote.
+                  For international shipments, import tariffs or customs clearance charges are determined by destination border authorities and are the responsibility of the recipient unless otherwise specified in your order quote.
                 </p>
               </section>
             </div>

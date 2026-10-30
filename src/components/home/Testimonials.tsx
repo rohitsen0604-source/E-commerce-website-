@@ -15,9 +15,9 @@ export function Testimonials() {
       <Container size="xl">
         <ScrollReveal direction="up" delayMs={0}>
           <SectionHeading
-            badge="Endorsements"
-            title="Voices of Connoisseurs"
-            description="Reflections from collectors, patron architects, and curators who live with our curated artifacts daily."
+            badge="Customer Reviews"
+            title="What Our Customers Say"
+            description="Real reviews and feedback from verified buyers across Mumbai, Delhi, Bengaluru, and all over India."
             theme="dark"
           />
         </ScrollReveal>
@@ -57,12 +57,12 @@ export function Testimonials() {
                     {t.verifiedBuyer && (
                       <div className="flex items-center gap-1 text-[10px] font-medium text-[#C6A76A] bg-[#C6A76A]/10 border border-[#C6A76A]/30 px-2.5 py-0.5 rounded-full">
                         <CheckCircle className="h-3 w-3" />
-                        <span>Verified</span>
+                        <span>Verified Buyer</span>
                       </div>
                     )}
                   </div>
                   <p className="mt-3 text-[11px] font-sans text-[#C6A76A] font-medium">
-                    Acquired: {t.productMentioned}
+                    Ordered: {t.productMentioned}
                   </p>
                 </div>
               </div>

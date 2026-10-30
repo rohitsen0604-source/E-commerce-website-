@@ -64,7 +64,7 @@ export default function TermsAndConditionsPage() {
                   4. Pricing & Product Accuracy
                 </h2>
                 <p>
-                  We strive to maintain exact specifications and pricing accuracy. In the rare event of an unexpected typographic discrepancy, our concierge reserves the right to clarify or rectify price quotes prior to transaction confirmation.
+                  We strive to maintain exact specifications and pricing accuracy. In the rare event of an unexpected typographic discrepancy, our customer support team reserves the right to clarify or rectify price quotes prior to transaction confirmation.
                 </p>
               </section>
 

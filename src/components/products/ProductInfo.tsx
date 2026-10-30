@@ -120,7 +120,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
       {product.variants.length > 0 && (
         <div className="space-y-3 pt-2">
           <div className="flex items-center justify-between text-xs font-medium text-[#D8D2C7]">
-            <span>Select Specification:</span>
+            <span>Select {product.variants[0]?.type || 'Option'}:</span>
             <span className="font-semibold text-[#F5F0E8]">
               {selectedVariant?.name}
             </span>
@@ -151,25 +151,25 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </div>
       )}
 
-      {/* WhatsApp Concierge Action CTA */}
+      {/* WhatsApp Order Action CTA */}
       <div className="space-y-3 pt-4">
         <WhatsAppButton
           productName={`${product.name} ${selectedVariant ? `(${selectedVariant.name})` : ''}`}
           productSlug={product.slug}
           size="lg"
           fullWidth
-          label="Inquire Availability via Concierge"
+          label="Order on WhatsApp"
           className="shadow-[0_0_20px_rgba(198,167,106,0.25)] hover:shadow-[0_0_35px_rgba(198,167,106,0.5)] hover:scale-[1.01] transition-all"
         />
-        <p className="text-center font-sans text-[11px] text-[#A69F93]">
-          Direct concierge assistance for stock confirmation, bespoke inquiry, and express courier dispatch.
+        <p className="text-center font-sans text-xs text-[#A69F93]">
+          Chat directly with us on WhatsApp to place your order with free delivery across India.
         </p>
       </div>
 
       {/* Key Highlights list */}
       <div className="rounded-2xl border border-[#34312B] bg-[#161514] p-6">
         <h4 className="text-xs font-semibold uppercase tracking-wider text-[#F5F0E8] mb-3.5">
-          Artisanal Highlights
+          Key Highlights
         </h4>
         <ul className="space-y-2.5 text-xs text-[#D8D2C7] font-light">
           {product.features.map((feat, i) => (
@@ -186,29 +186,29 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <ShieldCheck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
-            <p className="font-medium text-[#F5F0E8]">Authenticity</p>
-            <p className="text-[10px] text-[#A69F93]">100% Certified Genuine</p>
+            <p className="font-medium text-[#F5F0E8]">100% Genuine</p>
+            <p className="text-[10px] text-[#A69F93]">Certified Authentic</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <Truck className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
-            <p className="font-medium text-[#F5F0E8]">Global Express</p>
-            <p className="text-[10px] text-[#A69F93]">Insured Courier</p>
+            <p className="font-medium text-[#F5F0E8]">Fast Delivery</p>
+            <p className="text-[10px] text-[#A69F93]">Express Across India</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <RotateCcw className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">14-Day Returns</p>
-            <p className="text-[10px] text-[#A69F93]">Vault Condition</p>
+            <p className="text-[10px] text-[#A69F93]">Easy Return Policy</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-[#34312B] bg-[#161514] p-3.5">
           <Clock className="h-5 w-5 text-[#C6A76A] shrink-0" />
           <div>
             <p className="font-medium text-[#F5F0E8]">2-Year Warranty</p>
-            <p className="text-[10px] text-[#A69F93]">Maison Guarantee</p>
+            <p className="text-[10px] text-[#A69F93]">Full Brand Coverage</p>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export function WhatsAppButton({
 
   const whatsappHref = buildWhatsAppLink(contactConfig.whatsappNumber, message);
 
-  const buttonText = label || (productName ? 'Concierge WhatsApp Inquiry' : 'Private Concierge Chat');
+  const buttonText = label || (productName ? 'Order on WhatsApp' : 'Chat on WhatsApp');
 
   return (
     <Button

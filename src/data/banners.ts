@@ -4,8 +4,8 @@ export const banners: Banner[] = [
   {
     id: 'banner-hero',
     title: 'Curated Elegance for Modern Living',
-    subtitle: 'Meticulously engineered audio, handcrafted horology, and artisanal luxury designed to transcend ordinary utility.',
-    tagline: 'AUTUMN / WINTER 2026 COLLECTION',
+    subtitle: 'High-resolution wireless audio, precision automatic watches, and handcrafted luxury essentials designed for everyday modern living.',
+    tagline: 'PREMIUM COLLECTION 2026',
     imageUrl: '/images/banners/hero-banner.jpg',
     linkUrl: '/products',
     buttonText: 'Explore Collection',
@@ -14,9 +14,9 @@ export const banners: Banner[] = [
   },
   {
     id: 'banner-promo',
-    title: 'Seasonal Showcase: The Precision Acoustics Edition',
-    subtitle: 'Experience studio-calibrated acoustic fidelity with complimentary worldwide express courier dispatch.',
-    tagline: 'LIMITED PRODUCTION RELEASE',
+    title: 'Seasonal Showcase: High-Fidelity Acoustics',
+    subtitle: 'Experience studio-grade acoustic clarity with complimentary express courier delivery across India.',
+    tagline: 'SPECIAL EDITION RELEASE',
     imageUrl: '/images/banners/promo-banner.jpg',
     linkUrl: '/categories/electronics',
     buttonText: 'Discover Acoustics',

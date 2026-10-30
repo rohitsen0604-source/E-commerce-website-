@@ -63,7 +63,7 @@ export function ProductCard({ product, priority = false, className }: ProductCar
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            title={`Inquire about ${product.name} via Concierge`}
+            title={`Order ${product.name} on WhatsApp`}
             className="flex h-9 w-9 items-center justify-center bg-[#101010] text-[#C6A76A] border border-[#C6A76A] shadow-lg hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
           >
             <MessageCircle className="h-4 w-4" />

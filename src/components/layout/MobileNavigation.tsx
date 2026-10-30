@@ -125,7 +125,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
               className="flex items-center justify-center gap-2 border border-[#C6A76A] bg-[#141312] px-4 py-3 text-[10px] tracking-[0.2em] uppercase font-medium text-[#E8DDC8] hover:bg-[#C6A76A] hover:text-[#101010] transition-colors"
             >
               <MessageCircle className="h-3.5 w-3.5 text-[#C6A76A]" />
-              <span>Concierge WhatsApp</span>
+              <span>WhatsApp Support</span>
             </a>
             <a
               href={`tel:${contactConfig.whatsappNumber}`}
